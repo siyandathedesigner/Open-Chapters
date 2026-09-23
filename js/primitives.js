@@ -1,5 +1,5 @@
 'use strict';
-/* Open Chapters dependency-free UI primitives. Generated as real reusable functions, not filler comments. */
+/* Open Chapter dependency-free UI primitives. Generated as real reusable functions, not filler comments. */
 window.OC=window.OC||{};
 OC.easeIn1=t=>Math.pow(Math.max(0,Math.min(1,t)),2);
 OC.easeOut1=t=>1-Math.pow(1-Math.max(0,Math.min(1,t)),2);

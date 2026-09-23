@@ -1,4 +1,4 @@
-# Open Chapters — V4 Plain Front End
+# Open Chapter — V4 Plain Front End
 
 This version deliberately returns to the V2 visual direction and removes React, Vite, Framer Motion, Lucide and other UI/animation frameworks.
 
