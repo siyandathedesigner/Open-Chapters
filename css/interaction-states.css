@@ -1,0 +1,751 @@
+/* Explicit interaction state utilities for future components. */
+.state-hover-1:hover{border-color:#E0006C;transform:translateY(-1px)}
+.state-focus-1:focus-visible{outline:2px solid #E0006C;outline-offset:3px}
+.state-active-1:active{transform:translateY(1px) scale(0.985)}
+.state-hover-2:hover{border-color:#3B146E;transform:translateY(-2px)}
+.state-focus-2:focus-visible{outline:2px solid #3B146E;outline-offset:4px}
+.state-active-2:active{transform:translateY(2px) scale(0.990)}
+.state-hover-3:hover{border-color:#FF8A00;transform:translateY(-3px)}
+.state-focus-3:focus-visible{outline:2px solid #FF8A00;outline-offset:5px}
+.state-active-3:active{transform:translateY(0px) scale(0.980)}
+.state-hover-4:hover{border-color:#FF3D00;transform:translateY(-4px)}
+.state-focus-4:focus-visible{outline:2px solid #FF3D00;outline-offset:2px}
+.state-active-4:active{transform:translateY(1px) scale(0.985)}
+.state-hover-5:hover{border-color:#B6FF00;transform:translateY(-0px)}
+.state-focus-5:focus-visible{outline:2px solid #B6FF00;outline-offset:3px}
+.state-active-5:active{transform:translateY(2px) scale(0.990)}
+.state-hover-6:hover{border-color:#10131A;transform:translateY(-1px)}
+.state-focus-6:focus-visible{outline:2px solid #10131A;outline-offset:4px}
+.state-active-6:active{transform:translateY(0px) scale(0.980)}
+.state-hover-7:hover{border-color:#00A7C7;transform:translateY(-2px)}
+.state-focus-7:focus-visible{outline:2px solid #00A7C7;outline-offset:5px}
+.state-active-7:active{transform:translateY(1px) scale(0.985)}
+.state-hover-8:hover{border-color:#E0006C;transform:translateY(-3px)}
+.state-focus-8:focus-visible{outline:2px solid #E0006C;outline-offset:2px}
+.state-active-8:active{transform:translateY(2px) scale(0.990)}
+.state-hover-9:hover{border-color:#3B146E;transform:translateY(-4px)}
+.state-focus-9:focus-visible{outline:2px solid #3B146E;outline-offset:3px}
+.state-active-9:active{transform:translateY(0px) scale(0.980)}
+.state-hover-10:hover{border-color:#FF8A00;transform:translateY(-0px)}
+.state-focus-10:focus-visible{outline:2px solid #FF8A00;outline-offset:4px}
+.state-active-10:active{transform:translateY(1px) scale(0.985)}
+.state-hover-11:hover{border-color:#FF3D00;transform:translateY(-1px)}
+.state-focus-11:focus-visible{outline:2px solid #FF3D00;outline-offset:5px}
+.state-active-11:active{transform:translateY(2px) scale(0.990)}
+.state-hover-12:hover{border-color:#B6FF00;transform:translateY(-2px)}
+.state-focus-12:focus-visible{outline:2px solid #B6FF00;outline-offset:2px}
+.state-active-12:active{transform:translateY(0px) scale(0.980)}
+.state-hover-13:hover{border-color:#10131A;transform:translateY(-3px)}
+.state-focus-13:focus-visible{outline:2px solid #10131A;outline-offset:3px}
+.state-active-13:active{transform:translateY(1px) scale(0.985)}
+.state-hover-14:hover{border-color:#00A7C7;transform:translateY(-4px)}
+.state-focus-14:focus-visible{outline:2px solid #00A7C7;outline-offset:4px}
+.state-active-14:active{transform:translateY(2px) scale(0.990)}
+.state-hover-15:hover{border-color:#E0006C;transform:translateY(-0px)}
+.state-focus-15:focus-visible{outline:2px solid #E0006C;outline-offset:5px}
+.state-active-15:active{transform:translateY(0px) scale(0.980)}
+.state-hover-16:hover{border-color:#3B146E;transform:translateY(-1px)}
+.state-focus-16:focus-visible{outline:2px solid #3B146E;outline-offset:2px}
+.state-active-16:active{transform:translateY(1px) scale(0.985)}
+.state-hover-17:hover{border-color:#FF8A00;transform:translateY(-2px)}
+.state-focus-17:focus-visible{outline:2px solid #FF8A00;outline-offset:3px}
+.state-active-17:active{transform:translateY(2px) scale(0.990)}
+.state-hover-18:hover{border-color:#FF3D00;transform:translateY(-3px)}
+.state-focus-18:focus-visible{outline:2px solid #FF3D00;outline-offset:4px}
+.state-active-18:active{transform:translateY(0px) scale(0.980)}
+.state-hover-19:hover{border-color:#B6FF00;transform:translateY(-4px)}
+.state-focus-19:focus-visible{outline:2px solid #B6FF00;outline-offset:5px}
+.state-active-19:active{transform:translateY(1px) scale(0.985)}
+.state-hover-20:hover{border-color:#10131A;transform:translateY(-0px)}
+.state-focus-20:focus-visible{outline:2px solid #10131A;outline-offset:2px}
+.state-active-20:active{transform:translateY(2px) scale(0.990)}
+.state-hover-21:hover{border-color:#00A7C7;transform:translateY(-1px)}
+.state-focus-21:focus-visible{outline:2px solid #00A7C7;outline-offset:3px}
+.state-active-21:active{transform:translateY(0px) scale(0.980)}
+.state-hover-22:hover{border-color:#E0006C;transform:translateY(-2px)}
+.state-focus-22:focus-visible{outline:2px solid #E0006C;outline-offset:4px}
+.state-active-22:active{transform:translateY(1px) scale(0.985)}
+.state-hover-23:hover{border-color:#3B146E;transform:translateY(-3px)}
+.state-focus-23:focus-visible{outline:2px solid #3B146E;outline-offset:5px}
+.state-active-23:active{transform:translateY(2px) scale(0.990)}
+.state-hover-24:hover{border-color:#FF8A00;transform:translateY(-4px)}
+.state-focus-24:focus-visible{outline:2px solid #FF8A00;outline-offset:2px}
+.state-active-24:active{transform:translateY(0px) scale(0.980)}
+.state-hover-25:hover{border-color:#FF3D00;transform:translateY(-0px)}
+.state-focus-25:focus-visible{outline:2px solid #FF3D00;outline-offset:3px}
+.state-active-25:active{transform:translateY(1px) scale(0.985)}
+.state-hover-26:hover{border-color:#B6FF00;transform:translateY(-1px)}
+.state-focus-26:focus-visible{outline:2px solid #B6FF00;outline-offset:4px}
+.state-active-26:active{transform:translateY(2px) scale(0.990)}
+.state-hover-27:hover{border-color:#10131A;transform:translateY(-2px)}
+.state-focus-27:focus-visible{outline:2px solid #10131A;outline-offset:5px}
+.state-active-27:active{transform:translateY(0px) scale(0.980)}
+.state-hover-28:hover{border-color:#00A7C7;transform:translateY(-3px)}
+.state-focus-28:focus-visible{outline:2px solid #00A7C7;outline-offset:2px}
+.state-active-28:active{transform:translateY(1px) scale(0.985)}
+.state-hover-29:hover{border-color:#E0006C;transform:translateY(-4px)}
+.state-focus-29:focus-visible{outline:2px solid #E0006C;outline-offset:3px}
+.state-active-29:active{transform:translateY(2px) scale(0.990)}
+.state-hover-30:hover{border-color:#3B146E;transform:translateY(-0px)}
+.state-focus-30:focus-visible{outline:2px solid #3B146E;outline-offset:4px}
+.state-active-30:active{transform:translateY(0px) scale(0.980)}
+.state-hover-31:hover{border-color:#FF8A00;transform:translateY(-1px)}
+.state-focus-31:focus-visible{outline:2px solid #FF8A00;outline-offset:5px}
+.state-active-31:active{transform:translateY(1px) scale(0.985)}
+.state-hover-32:hover{border-color:#FF3D00;transform:translateY(-2px)}
+.state-focus-32:focus-visible{outline:2px solid #FF3D00;outline-offset:2px}
+.state-active-32:active{transform:translateY(2px) scale(0.990)}
+.state-hover-33:hover{border-color:#B6FF00;transform:translateY(-3px)}
+.state-focus-33:focus-visible{outline:2px solid #B6FF00;outline-offset:3px}
+.state-active-33:active{transform:translateY(0px) scale(0.980)}
+.state-hover-34:hover{border-color:#10131A;transform:translateY(-4px)}
+.state-focus-34:focus-visible{outline:2px solid #10131A;outline-offset:4px}
+.state-active-34:active{transform:translateY(1px) scale(0.985)}
+.state-hover-35:hover{border-color:#00A7C7;transform:translateY(-0px)}
+.state-focus-35:focus-visible{outline:2px solid #00A7C7;outline-offset:5px}
+.state-active-35:active{transform:translateY(2px) scale(0.990)}
+.state-hover-36:hover{border-color:#E0006C;transform:translateY(-1px)}
+.state-focus-36:focus-visible{outline:2px solid #E0006C;outline-offset:2px}
+.state-active-36:active{transform:translateY(0px) scale(0.980)}
+.state-hover-37:hover{border-color:#3B146E;transform:translateY(-2px)}
+.state-focus-37:focus-visible{outline:2px solid #3B146E;outline-offset:3px}
+.state-active-37:active{transform:translateY(1px) scale(0.985)}
+.state-hover-38:hover{border-color:#FF8A00;transform:translateY(-3px)}
+.state-focus-38:focus-visible{outline:2px solid #FF8A00;outline-offset:4px}
+.state-active-38:active{transform:translateY(2px) scale(0.990)}
+.state-hover-39:hover{border-color:#FF3D00;transform:translateY(-4px)}
+.state-focus-39:focus-visible{outline:2px solid #FF3D00;outline-offset:5px}
+.state-active-39:active{transform:translateY(0px) scale(0.980)}
+.state-hover-40:hover{border-color:#B6FF00;transform:translateY(-0px)}
+.state-focus-40:focus-visible{outline:2px solid #B6FF00;outline-offset:2px}
+.state-active-40:active{transform:translateY(1px) scale(0.985)}
+.state-hover-41:hover{border-color:#10131A;transform:translateY(-1px)}
+.state-focus-41:focus-visible{outline:2px solid #10131A;outline-offset:3px}
+.state-active-41:active{transform:translateY(2px) scale(0.990)}
+.state-hover-42:hover{border-color:#00A7C7;transform:translateY(-2px)}
+.state-focus-42:focus-visible{outline:2px solid #00A7C7;outline-offset:4px}
+.state-active-42:active{transform:translateY(0px) scale(0.980)}
+.state-hover-43:hover{border-color:#E0006C;transform:translateY(-3px)}
+.state-focus-43:focus-visible{outline:2px solid #E0006C;outline-offset:5px}
+.state-active-43:active{transform:translateY(1px) scale(0.985)}
+.state-hover-44:hover{border-color:#3B146E;transform:translateY(-4px)}
+.state-focus-44:focus-visible{outline:2px solid #3B146E;outline-offset:2px}
+.state-active-44:active{transform:translateY(2px) scale(0.990)}
+.state-hover-45:hover{border-color:#FF8A00;transform:translateY(-0px)}
+.state-focus-45:focus-visible{outline:2px solid #FF8A00;outline-offset:3px}
+.state-active-45:active{transform:translateY(0px) scale(0.980)}
+.state-hover-46:hover{border-color:#FF3D00;transform:translateY(-1px)}
+.state-focus-46:focus-visible{outline:2px solid #FF3D00;outline-offset:4px}
+.state-active-46:active{transform:translateY(1px) scale(0.985)}
+.state-hover-47:hover{border-color:#B6FF00;transform:translateY(-2px)}
+.state-focus-47:focus-visible{outline:2px solid #B6FF00;outline-offset:5px}
+.state-active-47:active{transform:translateY(2px) scale(0.990)}
+.state-hover-48:hover{border-color:#10131A;transform:translateY(-3px)}
+.state-focus-48:focus-visible{outline:2px solid #10131A;outline-offset:2px}
+.state-active-48:active{transform:translateY(0px) scale(0.980)}
+.state-hover-49:hover{border-color:#00A7C7;transform:translateY(-4px)}
+.state-focus-49:focus-visible{outline:2px solid #00A7C7;outline-offset:3px}
+.state-active-49:active{transform:translateY(1px) scale(0.985)}
+.state-hover-50:hover{border-color:#E0006C;transform:translateY(-0px)}
+.state-focus-50:focus-visible{outline:2px solid #E0006C;outline-offset:4px}
+.state-active-50:active{transform:translateY(2px) scale(0.990)}
+.state-hover-51:hover{border-color:#3B146E;transform:translateY(-1px)}
+.state-focus-51:focus-visible{outline:2px solid #3B146E;outline-offset:5px}
+.state-active-51:active{transform:translateY(0px) scale(0.980)}
+.state-hover-52:hover{border-color:#FF8A00;transform:translateY(-2px)}
+.state-focus-52:focus-visible{outline:2px solid #FF8A00;outline-offset:2px}
+.state-active-52:active{transform:translateY(1px) scale(0.985)}
+.state-hover-53:hover{border-color:#FF3D00;transform:translateY(-3px)}
+.state-focus-53:focus-visible{outline:2px solid #FF3D00;outline-offset:3px}
+.state-active-53:active{transform:translateY(2px) scale(0.990)}
+.state-hover-54:hover{border-color:#B6FF00;transform:translateY(-4px)}
+.state-focus-54:focus-visible{outline:2px solid #B6FF00;outline-offset:4px}
+.state-active-54:active{transform:translateY(0px) scale(0.980)}
+.state-hover-55:hover{border-color:#10131A;transform:translateY(-0px)}
+.state-focus-55:focus-visible{outline:2px solid #10131A;outline-offset:5px}
+.state-active-55:active{transform:translateY(1px) scale(0.985)}
+.state-hover-56:hover{border-color:#00A7C7;transform:translateY(-1px)}
+.state-focus-56:focus-visible{outline:2px solid #00A7C7;outline-offset:2px}
+.state-active-56:active{transform:translateY(2px) scale(0.990)}
+.state-hover-57:hover{border-color:#E0006C;transform:translateY(-2px)}
+.state-focus-57:focus-visible{outline:2px solid #E0006C;outline-offset:3px}
+.state-active-57:active{transform:translateY(0px) scale(0.980)}
+.state-hover-58:hover{border-color:#3B146E;transform:translateY(-3px)}
+.state-focus-58:focus-visible{outline:2px solid #3B146E;outline-offset:4px}
+.state-active-58:active{transform:translateY(1px) scale(0.985)}
+.state-hover-59:hover{border-color:#FF8A00;transform:translateY(-4px)}
+.state-focus-59:focus-visible{outline:2px solid #FF8A00;outline-offset:5px}
+.state-active-59:active{transform:translateY(2px) scale(0.990)}
+.state-hover-60:hover{border-color:#FF3D00;transform:translateY(-0px)}
+.state-focus-60:focus-visible{outline:2px solid #FF3D00;outline-offset:2px}
+.state-active-60:active{transform:translateY(0px) scale(0.980)}
+.state-hover-61:hover{border-color:#B6FF00;transform:translateY(-1px)}
+.state-focus-61:focus-visible{outline:2px solid #B6FF00;outline-offset:3px}
+.state-active-61:active{transform:translateY(1px) scale(0.985)}
+.state-hover-62:hover{border-color:#10131A;transform:translateY(-2px)}
+.state-focus-62:focus-visible{outline:2px solid #10131A;outline-offset:4px}
+.state-active-62:active{transform:translateY(2px) scale(0.990)}
+.state-hover-63:hover{border-color:#00A7C7;transform:translateY(-3px)}
+.state-focus-63:focus-visible{outline:2px solid #00A7C7;outline-offset:5px}
+.state-active-63:active{transform:translateY(0px) scale(0.980)}
+.state-hover-64:hover{border-color:#E0006C;transform:translateY(-4px)}
+.state-focus-64:focus-visible{outline:2px solid #E0006C;outline-offset:2px}
+.state-active-64:active{transform:translateY(1px) scale(0.985)}
+.state-hover-65:hover{border-color:#3B146E;transform:translateY(-0px)}
+.state-focus-65:focus-visible{outline:2px solid #3B146E;outline-offset:3px}
+.state-active-65:active{transform:translateY(2px) scale(0.990)}
+.state-hover-66:hover{border-color:#FF8A00;transform:translateY(-1px)}
+.state-focus-66:focus-visible{outline:2px solid #FF8A00;outline-offset:4px}
+.state-active-66:active{transform:translateY(0px) scale(0.980)}
+.state-hover-67:hover{border-color:#FF3D00;transform:translateY(-2px)}
+.state-focus-67:focus-visible{outline:2px solid #FF3D00;outline-offset:5px}
+.state-active-67:active{transform:translateY(1px) scale(0.985)}
+.state-hover-68:hover{border-color:#B6FF00;transform:translateY(-3px)}
+.state-focus-68:focus-visible{outline:2px solid #B6FF00;outline-offset:2px}
+.state-active-68:active{transform:translateY(2px) scale(0.990)}
+.state-hover-69:hover{border-color:#10131A;transform:translateY(-4px)}
+.state-focus-69:focus-visible{outline:2px solid #10131A;outline-offset:3px}
+.state-active-69:active{transform:translateY(0px) scale(0.980)}
+.state-hover-70:hover{border-color:#00A7C7;transform:translateY(-0px)}
+.state-focus-70:focus-visible{outline:2px solid #00A7C7;outline-offset:4px}
+.state-active-70:active{transform:translateY(1px) scale(0.985)}
+.state-hover-71:hover{border-color:#E0006C;transform:translateY(-1px)}
+.state-focus-71:focus-visible{outline:2px solid #E0006C;outline-offset:5px}
+.state-active-71:active{transform:translateY(2px) scale(0.990)}
+.state-hover-72:hover{border-color:#3B146E;transform:translateY(-2px)}
+.state-focus-72:focus-visible{outline:2px solid #3B146E;outline-offset:2px}
+.state-active-72:active{transform:translateY(0px) scale(0.980)}
+.state-hover-73:hover{border-color:#FF8A00;transform:translateY(-3px)}
+.state-focus-73:focus-visible{outline:2px solid #FF8A00;outline-offset:3px}
+.state-active-73:active{transform:translateY(1px) scale(0.985)}
+.state-hover-74:hover{border-color:#FF3D00;transform:translateY(-4px)}
+.state-focus-74:focus-visible{outline:2px solid #FF3D00;outline-offset:4px}
+.state-active-74:active{transform:translateY(2px) scale(0.990)}
+.state-hover-75:hover{border-color:#B6FF00;transform:translateY(-0px)}
+.state-focus-75:focus-visible{outline:2px solid #B6FF00;outline-offset:5px}
+.state-active-75:active{transform:translateY(0px) scale(0.980)}
+.state-hover-76:hover{border-color:#10131A;transform:translateY(-1px)}
+.state-focus-76:focus-visible{outline:2px solid #10131A;outline-offset:2px}
+.state-active-76:active{transform:translateY(1px) scale(0.985)}
+.state-hover-77:hover{border-color:#00A7C7;transform:translateY(-2px)}
+.state-focus-77:focus-visible{outline:2px solid #00A7C7;outline-offset:3px}
+.state-active-77:active{transform:translateY(2px) scale(0.990)}
+.state-hover-78:hover{border-color:#E0006C;transform:translateY(-3px)}
+.state-focus-78:focus-visible{outline:2px solid #E0006C;outline-offset:4px}
+.state-active-78:active{transform:translateY(0px) scale(0.980)}
+.state-hover-79:hover{border-color:#3B146E;transform:translateY(-4px)}
+.state-focus-79:focus-visible{outline:2px solid #3B146E;outline-offset:5px}
+.state-active-79:active{transform:translateY(1px) scale(0.985)}
+.state-hover-80:hover{border-color:#FF8A00;transform:translateY(-0px)}
+.state-focus-80:focus-visible{outline:2px solid #FF8A00;outline-offset:2px}
+.state-active-80:active{transform:translateY(2px) scale(0.990)}
+.state-hover-81:hover{border-color:#FF3D00;transform:translateY(-1px)}
+.state-focus-81:focus-visible{outline:2px solid #FF3D00;outline-offset:3px}
+.state-active-81:active{transform:translateY(0px) scale(0.980)}
+.state-hover-82:hover{border-color:#B6FF00;transform:translateY(-2px)}
+.state-focus-82:focus-visible{outline:2px solid #B6FF00;outline-offset:4px}
+.state-active-82:active{transform:translateY(1px) scale(0.985)}
+.state-hover-83:hover{border-color:#10131A;transform:translateY(-3px)}
+.state-focus-83:focus-visible{outline:2px solid #10131A;outline-offset:5px}
+.state-active-83:active{transform:translateY(2px) scale(0.990)}
+.state-hover-84:hover{border-color:#00A7C7;transform:translateY(-4px)}
+.state-focus-84:focus-visible{outline:2px solid #00A7C7;outline-offset:2px}
+.state-active-84:active{transform:translateY(0px) scale(0.980)}
+.state-hover-85:hover{border-color:#E0006C;transform:translateY(-0px)}
+.state-focus-85:focus-visible{outline:2px solid #E0006C;outline-offset:3px}
+.state-active-85:active{transform:translateY(1px) scale(0.985)}
+.state-hover-86:hover{border-color:#3B146E;transform:translateY(-1px)}
+.state-focus-86:focus-visible{outline:2px solid #3B146E;outline-offset:4px}
+.state-active-86:active{transform:translateY(2px) scale(0.990)}
+.state-hover-87:hover{border-color:#FF8A00;transform:translateY(-2px)}
+.state-focus-87:focus-visible{outline:2px solid #FF8A00;outline-offset:5px}
+.state-active-87:active{transform:translateY(0px) scale(0.980)}
+.state-hover-88:hover{border-color:#FF3D00;transform:translateY(-3px)}
+.state-focus-88:focus-visible{outline:2px solid #FF3D00;outline-offset:2px}
+.state-active-88:active{transform:translateY(1px) scale(0.985)}
+.state-hover-89:hover{border-color:#B6FF00;transform:translateY(-4px)}
+.state-focus-89:focus-visible{outline:2px solid #B6FF00;outline-offset:3px}
+.state-active-89:active{transform:translateY(2px) scale(0.990)}
+.state-hover-90:hover{border-color:#10131A;transform:translateY(-0px)}
+.state-focus-90:focus-visible{outline:2px solid #10131A;outline-offset:4px}
+.state-active-90:active{transform:translateY(0px) scale(0.980)}
+.state-hover-91:hover{border-color:#00A7C7;transform:translateY(-1px)}
+.state-focus-91:focus-visible{outline:2px solid #00A7C7;outline-offset:5px}
+.state-active-91:active{transform:translateY(1px) scale(0.985)}
+.state-hover-92:hover{border-color:#E0006C;transform:translateY(-2px)}
+.state-focus-92:focus-visible{outline:2px solid #E0006C;outline-offset:2px}
+.state-active-92:active{transform:translateY(2px) scale(0.990)}
+.state-hover-93:hover{border-color:#3B146E;transform:translateY(-3px)}
+.state-focus-93:focus-visible{outline:2px solid #3B146E;outline-offset:3px}
+.state-active-93:active{transform:translateY(0px) scale(0.980)}
+.state-hover-94:hover{border-color:#FF8A00;transform:translateY(-4px)}
+.state-focus-94:focus-visible{outline:2px solid #FF8A00;outline-offset:4px}
+.state-active-94:active{transform:translateY(1px) scale(0.985)}
+.state-hover-95:hover{border-color:#FF3D00;transform:translateY(-0px)}
+.state-focus-95:focus-visible{outline:2px solid #FF3D00;outline-offset:5px}
+.state-active-95:active{transform:translateY(2px) scale(0.990)}
+.state-hover-96:hover{border-color:#B6FF00;transform:translateY(-1px)}
+.state-focus-96:focus-visible{outline:2px solid #B6FF00;outline-offset:2px}
+.state-active-96:active{transform:translateY(0px) scale(0.980)}
+.state-hover-97:hover{border-color:#10131A;transform:translateY(-2px)}
+.state-focus-97:focus-visible{outline:2px solid #10131A;outline-offset:3px}
+.state-active-97:active{transform:translateY(1px) scale(0.985)}
+.state-hover-98:hover{border-color:#00A7C7;transform:translateY(-3px)}
+.state-focus-98:focus-visible{outline:2px solid #00A7C7;outline-offset:4px}
+.state-active-98:active{transform:translateY(2px) scale(0.990)}
+.state-hover-99:hover{border-color:#E0006C;transform:translateY(-4px)}
+.state-focus-99:focus-visible{outline:2px solid #E0006C;outline-offset:5px}
+.state-active-99:active{transform:translateY(0px) scale(0.980)}
+.state-hover-100:hover{border-color:#3B146E;transform:translateY(-0px)}
+.state-focus-100:focus-visible{outline:2px solid #3B146E;outline-offset:2px}
+.state-active-100:active{transform:translateY(1px) scale(0.985)}
+.state-hover-101:hover{border-color:#FF8A00;transform:translateY(-1px)}
+.state-focus-101:focus-visible{outline:2px solid #FF8A00;outline-offset:3px}
+.state-active-101:active{transform:translateY(2px) scale(0.990)}
+.state-hover-102:hover{border-color:#FF3D00;transform:translateY(-2px)}
+.state-focus-102:focus-visible{outline:2px solid #FF3D00;outline-offset:4px}
+.state-active-102:active{transform:translateY(0px) scale(0.980)}
+.state-hover-103:hover{border-color:#B6FF00;transform:translateY(-3px)}
+.state-focus-103:focus-visible{outline:2px solid #B6FF00;outline-offset:5px}
+.state-active-103:active{transform:translateY(1px) scale(0.985)}
+.state-hover-104:hover{border-color:#10131A;transform:translateY(-4px)}
+.state-focus-104:focus-visible{outline:2px solid #10131A;outline-offset:2px}
+.state-active-104:active{transform:translateY(2px) scale(0.990)}
+.state-hover-105:hover{border-color:#00A7C7;transform:translateY(-0px)}
+.state-focus-105:focus-visible{outline:2px solid #00A7C7;outline-offset:3px}
+.state-active-105:active{transform:translateY(0px) scale(0.980)}
+.state-hover-106:hover{border-color:#E0006C;transform:translateY(-1px)}
+.state-focus-106:focus-visible{outline:2px solid #E0006C;outline-offset:4px}
+.state-active-106:active{transform:translateY(1px) scale(0.985)}
+.state-hover-107:hover{border-color:#3B146E;transform:translateY(-2px)}
+.state-focus-107:focus-visible{outline:2px solid #3B146E;outline-offset:5px}
+.state-active-107:active{transform:translateY(2px) scale(0.990)}
+.state-hover-108:hover{border-color:#FF8A00;transform:translateY(-3px)}
+.state-focus-108:focus-visible{outline:2px solid #FF8A00;outline-offset:2px}
+.state-active-108:active{transform:translateY(0px) scale(0.980)}
+.state-hover-109:hover{border-color:#FF3D00;transform:translateY(-4px)}
+.state-focus-109:focus-visible{outline:2px solid #FF3D00;outline-offset:3px}
+.state-active-109:active{transform:translateY(1px) scale(0.985)}
+.state-hover-110:hover{border-color:#B6FF00;transform:translateY(-0px)}
+.state-focus-110:focus-visible{outline:2px solid #B6FF00;outline-offset:4px}
+.state-active-110:active{transform:translateY(2px) scale(0.990)}
+.state-hover-111:hover{border-color:#10131A;transform:translateY(-1px)}
+.state-focus-111:focus-visible{outline:2px solid #10131A;outline-offset:5px}
+.state-active-111:active{transform:translateY(0px) scale(0.980)}
+.state-hover-112:hover{border-color:#00A7C7;transform:translateY(-2px)}
+.state-focus-112:focus-visible{outline:2px solid #00A7C7;outline-offset:2px}
+.state-active-112:active{transform:translateY(1px) scale(0.985)}
+.state-hover-113:hover{border-color:#E0006C;transform:translateY(-3px)}
+.state-focus-113:focus-visible{outline:2px solid #E0006C;outline-offset:3px}
+.state-active-113:active{transform:translateY(2px) scale(0.990)}
+.state-hover-114:hover{border-color:#3B146E;transform:translateY(-4px)}
+.state-focus-114:focus-visible{outline:2px solid #3B146E;outline-offset:4px}
+.state-active-114:active{transform:translateY(0px) scale(0.980)}
+.state-hover-115:hover{border-color:#FF8A00;transform:translateY(-0px)}
+.state-focus-115:focus-visible{outline:2px solid #FF8A00;outline-offset:5px}
+.state-active-115:active{transform:translateY(1px) scale(0.985)}
+.state-hover-116:hover{border-color:#FF3D00;transform:translateY(-1px)}
+.state-focus-116:focus-visible{outline:2px solid #FF3D00;outline-offset:2px}
+.state-active-116:active{transform:translateY(2px) scale(0.990)}
+.state-hover-117:hover{border-color:#B6FF00;transform:translateY(-2px)}
+.state-focus-117:focus-visible{outline:2px solid #B6FF00;outline-offset:3px}
+.state-active-117:active{transform:translateY(0px) scale(0.980)}
+.state-hover-118:hover{border-color:#10131A;transform:translateY(-3px)}
+.state-focus-118:focus-visible{outline:2px solid #10131A;outline-offset:4px}
+.state-active-118:active{transform:translateY(1px) scale(0.985)}
+.state-hover-119:hover{border-color:#00A7C7;transform:translateY(-4px)}
+.state-focus-119:focus-visible{outline:2px solid #00A7C7;outline-offset:5px}
+.state-active-119:active{transform:translateY(2px) scale(0.990)}
+.state-hover-120:hover{border-color:#E0006C;transform:translateY(-0px)}
+.state-focus-120:focus-visible{outline:2px solid #E0006C;outline-offset:2px}
+.state-active-120:active{transform:translateY(0px) scale(0.980)}
+.state-hover-121:hover{border-color:#3B146E;transform:translateY(-1px)}
+.state-focus-121:focus-visible{outline:2px solid #3B146E;outline-offset:3px}
+.state-active-121:active{transform:translateY(1px) scale(0.985)}
+.state-hover-122:hover{border-color:#FF8A00;transform:translateY(-2px)}
+.state-focus-122:focus-visible{outline:2px solid #FF8A00;outline-offset:4px}
+.state-active-122:active{transform:translateY(2px) scale(0.990)}
+.state-hover-123:hover{border-color:#FF3D00;transform:translateY(-3px)}
+.state-focus-123:focus-visible{outline:2px solid #FF3D00;outline-offset:5px}
+.state-active-123:active{transform:translateY(0px) scale(0.980)}
+.state-hover-124:hover{border-color:#B6FF00;transform:translateY(-4px)}
+.state-focus-124:focus-visible{outline:2px solid #B6FF00;outline-offset:2px}
+.state-active-124:active{transform:translateY(1px) scale(0.985)}
+.state-hover-125:hover{border-color:#10131A;transform:translateY(-0px)}
+.state-focus-125:focus-visible{outline:2px solid #10131A;outline-offset:3px}
+.state-active-125:active{transform:translateY(2px) scale(0.990)}
+.state-hover-126:hover{border-color:#00A7C7;transform:translateY(-1px)}
+.state-focus-126:focus-visible{outline:2px solid #00A7C7;outline-offset:4px}
+.state-active-126:active{transform:translateY(0px) scale(0.980)}
+.state-hover-127:hover{border-color:#E0006C;transform:translateY(-2px)}
+.state-focus-127:focus-visible{outline:2px solid #E0006C;outline-offset:5px}
+.state-active-127:active{transform:translateY(1px) scale(0.985)}
+.state-hover-128:hover{border-color:#3B146E;transform:translateY(-3px)}
+.state-focus-128:focus-visible{outline:2px solid #3B146E;outline-offset:2px}
+.state-active-128:active{transform:translateY(2px) scale(0.990)}
+.state-hover-129:hover{border-color:#FF8A00;transform:translateY(-4px)}
+.state-focus-129:focus-visible{outline:2px solid #FF8A00;outline-offset:3px}
+.state-active-129:active{transform:translateY(0px) scale(0.980)}
+.state-hover-130:hover{border-color:#FF3D00;transform:translateY(-0px)}
+.state-focus-130:focus-visible{outline:2px solid #FF3D00;outline-offset:4px}
+.state-active-130:active{transform:translateY(1px) scale(0.985)}
+.state-hover-131:hover{border-color:#B6FF00;transform:translateY(-1px)}
+.state-focus-131:focus-visible{outline:2px solid #B6FF00;outline-offset:5px}
+.state-active-131:active{transform:translateY(2px) scale(0.990)}
+.state-hover-132:hover{border-color:#10131A;transform:translateY(-2px)}
+.state-focus-132:focus-visible{outline:2px solid #10131A;outline-offset:2px}
+.state-active-132:active{transform:translateY(0px) scale(0.980)}
+.state-hover-133:hover{border-color:#00A7C7;transform:translateY(-3px)}
+.state-focus-133:focus-visible{outline:2px solid #00A7C7;outline-offset:3px}
+.state-active-133:active{transform:translateY(1px) scale(0.985)}
+.state-hover-134:hover{border-color:#E0006C;transform:translateY(-4px)}
+.state-focus-134:focus-visible{outline:2px solid #E0006C;outline-offset:4px}
+.state-active-134:active{transform:translateY(2px) scale(0.990)}
+.state-hover-135:hover{border-color:#3B146E;transform:translateY(-0px)}
+.state-focus-135:focus-visible{outline:2px solid #3B146E;outline-offset:5px}
+.state-active-135:active{transform:translateY(0px) scale(0.980)}
+.state-hover-136:hover{border-color:#FF8A00;transform:translateY(-1px)}
+.state-focus-136:focus-visible{outline:2px solid #FF8A00;outline-offset:2px}
+.state-active-136:active{transform:translateY(1px) scale(0.985)}
+.state-hover-137:hover{border-color:#FF3D00;transform:translateY(-2px)}
+.state-focus-137:focus-visible{outline:2px solid #FF3D00;outline-offset:3px}
+.state-active-137:active{transform:translateY(2px) scale(0.990)}
+.state-hover-138:hover{border-color:#B6FF00;transform:translateY(-3px)}
+.state-focus-138:focus-visible{outline:2px solid #B6FF00;outline-offset:4px}
+.state-active-138:active{transform:translateY(0px) scale(0.980)}
+.state-hover-139:hover{border-color:#10131A;transform:translateY(-4px)}
+.state-focus-139:focus-visible{outline:2px solid #10131A;outline-offset:5px}
+.state-active-139:active{transform:translateY(1px) scale(0.985)}
+.state-hover-140:hover{border-color:#00A7C7;transform:translateY(-0px)}
+.state-focus-140:focus-visible{outline:2px solid #00A7C7;outline-offset:2px}
+.state-active-140:active{transform:translateY(2px) scale(0.990)}
+.state-hover-141:hover{border-color:#E0006C;transform:translateY(-1px)}
+.state-focus-141:focus-visible{outline:2px solid #E0006C;outline-offset:3px}
+.state-active-141:active{transform:translateY(0px) scale(0.980)}
+.state-hover-142:hover{border-color:#3B146E;transform:translateY(-2px)}
+.state-focus-142:focus-visible{outline:2px solid #3B146E;outline-offset:4px}
+.state-active-142:active{transform:translateY(1px) scale(0.985)}
+.state-hover-143:hover{border-color:#FF8A00;transform:translateY(-3px)}
+.state-focus-143:focus-visible{outline:2px solid #FF8A00;outline-offset:5px}
+.state-active-143:active{transform:translateY(2px) scale(0.990)}
+.state-hover-144:hover{border-color:#FF3D00;transform:translateY(-4px)}
+.state-focus-144:focus-visible{outline:2px solid #FF3D00;outline-offset:2px}
+.state-active-144:active{transform:translateY(0px) scale(0.980)}
+.state-hover-145:hover{border-color:#B6FF00;transform:translateY(-0px)}
+.state-focus-145:focus-visible{outline:2px solid #B6FF00;outline-offset:3px}
+.state-active-145:active{transform:translateY(1px) scale(0.985)}
+.state-hover-146:hover{border-color:#10131A;transform:translateY(-1px)}
+.state-focus-146:focus-visible{outline:2px solid #10131A;outline-offset:4px}
+.state-active-146:active{transform:translateY(2px) scale(0.990)}
+.state-hover-147:hover{border-color:#00A7C7;transform:translateY(-2px)}
+.state-focus-147:focus-visible{outline:2px solid #00A7C7;outline-offset:5px}
+.state-active-147:active{transform:translateY(0px) scale(0.980)}
+.state-hover-148:hover{border-color:#E0006C;transform:translateY(-3px)}
+.state-focus-148:focus-visible{outline:2px solid #E0006C;outline-offset:2px}
+.state-active-148:active{transform:translateY(1px) scale(0.985)}
+.state-hover-149:hover{border-color:#3B146E;transform:translateY(-4px)}
+.state-focus-149:focus-visible{outline:2px solid #3B146E;outline-offset:3px}
+.state-active-149:active{transform:translateY(2px) scale(0.990)}
+.state-hover-150:hover{border-color:#FF8A00;transform:translateY(-0px)}
+.state-focus-150:focus-visible{outline:2px solid #FF8A00;outline-offset:4px}
+.state-active-150:active{transform:translateY(0px) scale(0.980)}
+.state-hover-151:hover{border-color:#FF3D00;transform:translateY(-1px)}
+.state-focus-151:focus-visible{outline:2px solid #FF3D00;outline-offset:5px}
+.state-active-151:active{transform:translateY(1px) scale(0.985)}
+.state-hover-152:hover{border-color:#B6FF00;transform:translateY(-2px)}
+.state-focus-152:focus-visible{outline:2px solid #B6FF00;outline-offset:2px}
+.state-active-152:active{transform:translateY(2px) scale(0.990)}
+.state-hover-153:hover{border-color:#10131A;transform:translateY(-3px)}
+.state-focus-153:focus-visible{outline:2px solid #10131A;outline-offset:3px}
+.state-active-153:active{transform:translateY(0px) scale(0.980)}
+.state-hover-154:hover{border-color:#00A7C7;transform:translateY(-4px)}
+.state-focus-154:focus-visible{outline:2px solid #00A7C7;outline-offset:4px}
+.state-active-154:active{transform:translateY(1px) scale(0.985)}
+.state-hover-155:hover{border-color:#E0006C;transform:translateY(-0px)}
+.state-focus-155:focus-visible{outline:2px solid #E0006C;outline-offset:5px}
+.state-active-155:active{transform:translateY(2px) scale(0.990)}
+.state-hover-156:hover{border-color:#3B146E;transform:translateY(-1px)}
+.state-focus-156:focus-visible{outline:2px solid #3B146E;outline-offset:2px}
+.state-active-156:active{transform:translateY(0px) scale(0.980)}
+.state-hover-157:hover{border-color:#FF8A00;transform:translateY(-2px)}
+.state-focus-157:focus-visible{outline:2px solid #FF8A00;outline-offset:3px}
+.state-active-157:active{transform:translateY(1px) scale(0.985)}
+.state-hover-158:hover{border-color:#FF3D00;transform:translateY(-3px)}
+.state-focus-158:focus-visible{outline:2px solid #FF3D00;outline-offset:4px}
+.state-active-158:active{transform:translateY(2px) scale(0.990)}
+.state-hover-159:hover{border-color:#B6FF00;transform:translateY(-4px)}
+.state-focus-159:focus-visible{outline:2px solid #B6FF00;outline-offset:5px}
+.state-active-159:active{transform:translateY(0px) scale(0.980)}
+.state-hover-160:hover{border-color:#10131A;transform:translateY(-0px)}
+.state-focus-160:focus-visible{outline:2px solid #10131A;outline-offset:2px}
+.state-active-160:active{transform:translateY(1px) scale(0.985)}
+.state-hover-161:hover{border-color:#00A7C7;transform:translateY(-1px)}
+.state-focus-161:focus-visible{outline:2px solid #00A7C7;outline-offset:3px}
+.state-active-161:active{transform:translateY(2px) scale(0.990)}
+.state-hover-162:hover{border-color:#E0006C;transform:translateY(-2px)}
+.state-focus-162:focus-visible{outline:2px solid #E0006C;outline-offset:4px}
+.state-active-162:active{transform:translateY(0px) scale(0.980)}
+.state-hover-163:hover{border-color:#3B146E;transform:translateY(-3px)}
+.state-focus-163:focus-visible{outline:2px solid #3B146E;outline-offset:5px}
+.state-active-163:active{transform:translateY(1px) scale(0.985)}
+.state-hover-164:hover{border-color:#FF8A00;transform:translateY(-4px)}
+.state-focus-164:focus-visible{outline:2px solid #FF8A00;outline-offset:2px}
+.state-active-164:active{transform:translateY(2px) scale(0.990)}
+.state-hover-165:hover{border-color:#FF3D00;transform:translateY(-0px)}
+.state-focus-165:focus-visible{outline:2px solid #FF3D00;outline-offset:3px}
+.state-active-165:active{transform:translateY(0px) scale(0.980)}
+.state-hover-166:hover{border-color:#B6FF00;transform:translateY(-1px)}
+.state-focus-166:focus-visible{outline:2px solid #B6FF00;outline-offset:4px}
+.state-active-166:active{transform:translateY(1px) scale(0.985)}
+.state-hover-167:hover{border-color:#10131A;transform:translateY(-2px)}
+.state-focus-167:focus-visible{outline:2px solid #10131A;outline-offset:5px}
+.state-active-167:active{transform:translateY(2px) scale(0.990)}
+.state-hover-168:hover{border-color:#00A7C7;transform:translateY(-3px)}
+.state-focus-168:focus-visible{outline:2px solid #00A7C7;outline-offset:2px}
+.state-active-168:active{transform:translateY(0px) scale(0.980)}
+.state-hover-169:hover{border-color:#E0006C;transform:translateY(-4px)}
+.state-focus-169:focus-visible{outline:2px solid #E0006C;outline-offset:3px}
+.state-active-169:active{transform:translateY(1px) scale(0.985)}
+.state-hover-170:hover{border-color:#3B146E;transform:translateY(-0px)}
+.state-focus-170:focus-visible{outline:2px solid #3B146E;outline-offset:4px}
+.state-active-170:active{transform:translateY(2px) scale(0.990)}
+.state-hover-171:hover{border-color:#FF8A00;transform:translateY(-1px)}
+.state-focus-171:focus-visible{outline:2px solid #FF8A00;outline-offset:5px}
+.state-active-171:active{transform:translateY(0px) scale(0.980)}
+.state-hover-172:hover{border-color:#FF3D00;transform:translateY(-2px)}
+.state-focus-172:focus-visible{outline:2px solid #FF3D00;outline-offset:2px}
+.state-active-172:active{transform:translateY(1px) scale(0.985)}
+.state-hover-173:hover{border-color:#B6FF00;transform:translateY(-3px)}
+.state-focus-173:focus-visible{outline:2px solid #B6FF00;outline-offset:3px}
+.state-active-173:active{transform:translateY(2px) scale(0.990)}
+.state-hover-174:hover{border-color:#10131A;transform:translateY(-4px)}
+.state-focus-174:focus-visible{outline:2px solid #10131A;outline-offset:4px}
+.state-active-174:active{transform:translateY(0px) scale(0.980)}
+.state-hover-175:hover{border-color:#00A7C7;transform:translateY(-0px)}
+.state-focus-175:focus-visible{outline:2px solid #00A7C7;outline-offset:5px}
+.state-active-175:active{transform:translateY(1px) scale(0.985)}
+.state-hover-176:hover{border-color:#E0006C;transform:translateY(-1px)}
+.state-focus-176:focus-visible{outline:2px solid #E0006C;outline-offset:2px}
+.state-active-176:active{transform:translateY(2px) scale(0.990)}
+.state-hover-177:hover{border-color:#3B146E;transform:translateY(-2px)}
+.state-focus-177:focus-visible{outline:2px solid #3B146E;outline-offset:3px}
+.state-active-177:active{transform:translateY(0px) scale(0.980)}
+.state-hover-178:hover{border-color:#FF8A00;transform:translateY(-3px)}
+.state-focus-178:focus-visible{outline:2px solid #FF8A00;outline-offset:4px}
+.state-active-178:active{transform:translateY(1px) scale(0.985)}
+.state-hover-179:hover{border-color:#FF3D00;transform:translateY(-4px)}
+.state-focus-179:focus-visible{outline:2px solid #FF3D00;outline-offset:5px}
+.state-active-179:active{transform:translateY(2px) scale(0.990)}
+.state-hover-180:hover{border-color:#B6FF00;transform:translateY(-0px)}
+.state-focus-180:focus-visible{outline:2px solid #B6FF00;outline-offset:2px}
+.state-active-180:active{transform:translateY(0px) scale(0.980)}
+.state-hover-181:hover{border-color:#10131A;transform:translateY(-1px)}
+.state-focus-181:focus-visible{outline:2px solid #10131A;outline-offset:3px}
+.state-active-181:active{transform:translateY(1px) scale(0.985)}
+.state-hover-182:hover{border-color:#00A7C7;transform:translateY(-2px)}
+.state-focus-182:focus-visible{outline:2px solid #00A7C7;outline-offset:4px}
+.state-active-182:active{transform:translateY(2px) scale(0.990)}
+.state-hover-183:hover{border-color:#E0006C;transform:translateY(-3px)}
+.state-focus-183:focus-visible{outline:2px solid #E0006C;outline-offset:5px}
+.state-active-183:active{transform:translateY(0px) scale(0.980)}
+.state-hover-184:hover{border-color:#3B146E;transform:translateY(-4px)}
+.state-focus-184:focus-visible{outline:2px solid #3B146E;outline-offset:2px}
+.state-active-184:active{transform:translateY(1px) scale(0.985)}
+.state-hover-185:hover{border-color:#FF8A00;transform:translateY(-0px)}
+.state-focus-185:focus-visible{outline:2px solid #FF8A00;outline-offset:3px}
+.state-active-185:active{transform:translateY(2px) scale(0.990)}
+.state-hover-186:hover{border-color:#FF3D00;transform:translateY(-1px)}
+.state-focus-186:focus-visible{outline:2px solid #FF3D00;outline-offset:4px}
+.state-active-186:active{transform:translateY(0px) scale(0.980)}
+.state-hover-187:hover{border-color:#B6FF00;transform:translateY(-2px)}
+.state-focus-187:focus-visible{outline:2px solid #B6FF00;outline-offset:5px}
+.state-active-187:active{transform:translateY(1px) scale(0.985)}
+.state-hover-188:hover{border-color:#10131A;transform:translateY(-3px)}
+.state-focus-188:focus-visible{outline:2px solid #10131A;outline-offset:2px}
+.state-active-188:active{transform:translateY(2px) scale(0.990)}
+.state-hover-189:hover{border-color:#00A7C7;transform:translateY(-4px)}
+.state-focus-189:focus-visible{outline:2px solid #00A7C7;outline-offset:3px}
+.state-active-189:active{transform:translateY(0px) scale(0.980)}
+.state-hover-190:hover{border-color:#E0006C;transform:translateY(-0px)}
+.state-focus-190:focus-visible{outline:2px solid #E0006C;outline-offset:4px}
+.state-active-190:active{transform:translateY(1px) scale(0.985)}
+.state-hover-191:hover{border-color:#3B146E;transform:translateY(-1px)}
+.state-focus-191:focus-visible{outline:2px solid #3B146E;outline-offset:5px}
+.state-active-191:active{transform:translateY(2px) scale(0.990)}
+.state-hover-192:hover{border-color:#FF8A00;transform:translateY(-2px)}
+.state-focus-192:focus-visible{outline:2px solid #FF8A00;outline-offset:2px}
+.state-active-192:active{transform:translateY(0px) scale(0.980)}
+.state-hover-193:hover{border-color:#FF3D00;transform:translateY(-3px)}
+.state-focus-193:focus-visible{outline:2px solid #FF3D00;outline-offset:3px}
+.state-active-193:active{transform:translateY(1px) scale(0.985)}
+.state-hover-194:hover{border-color:#B6FF00;transform:translateY(-4px)}
+.state-focus-194:focus-visible{outline:2px solid #B6FF00;outline-offset:4px}
+.state-active-194:active{transform:translateY(2px) scale(0.990)}
+.state-hover-195:hover{border-color:#10131A;transform:translateY(-0px)}
+.state-focus-195:focus-visible{outline:2px solid #10131A;outline-offset:5px}
+.state-active-195:active{transform:translateY(0px) scale(0.980)}
+.state-hover-196:hover{border-color:#00A7C7;transform:translateY(-1px)}
+.state-focus-196:focus-visible{outline:2px solid #00A7C7;outline-offset:2px}
+.state-active-196:active{transform:translateY(1px) scale(0.985)}
+.state-hover-197:hover{border-color:#E0006C;transform:translateY(-2px)}
+.state-focus-197:focus-visible{outline:2px solid #E0006C;outline-offset:3px}
+.state-active-197:active{transform:translateY(2px) scale(0.990)}
+.state-hover-198:hover{border-color:#3B146E;transform:translateY(-3px)}
+.state-focus-198:focus-visible{outline:2px solid #3B146E;outline-offset:4px}
+.state-active-198:active{transform:translateY(0px) scale(0.980)}
+.state-hover-199:hover{border-color:#FF8A00;transform:translateY(-4px)}
+.state-focus-199:focus-visible{outline:2px solid #FF8A00;outline-offset:5px}
+.state-active-199:active{transform:translateY(1px) scale(0.985)}
+.state-hover-200:hover{border-color:#FF3D00;transform:translateY(-0px)}
+.state-focus-200:focus-visible{outline:2px solid #FF3D00;outline-offset:2px}
+.state-active-200:active{transform:translateY(2px) scale(0.990)}
+.state-hover-201:hover{border-color:#B6FF00;transform:translateY(-1px)}
+.state-focus-201:focus-visible{outline:2px solid #B6FF00;outline-offset:3px}
+.state-active-201:active{transform:translateY(0px) scale(0.980)}
+.state-hover-202:hover{border-color:#10131A;transform:translateY(-2px)}
+.state-focus-202:focus-visible{outline:2px solid #10131A;outline-offset:4px}
+.state-active-202:active{transform:translateY(1px) scale(0.985)}
+.state-hover-203:hover{border-color:#00A7C7;transform:translateY(-3px)}
+.state-focus-203:focus-visible{outline:2px solid #00A7C7;outline-offset:5px}
+.state-active-203:active{transform:translateY(2px) scale(0.990)}
+.state-hover-204:hover{border-color:#E0006C;transform:translateY(-4px)}
+.state-focus-204:focus-visible{outline:2px solid #E0006C;outline-offset:2px}
+.state-active-204:active{transform:translateY(0px) scale(0.980)}
+.state-hover-205:hover{border-color:#3B146E;transform:translateY(-0px)}
+.state-focus-205:focus-visible{outline:2px solid #3B146E;outline-offset:3px}
+.state-active-205:active{transform:translateY(1px) scale(0.985)}
+.state-hover-206:hover{border-color:#FF8A00;transform:translateY(-1px)}
+.state-focus-206:focus-visible{outline:2px solid #FF8A00;outline-offset:4px}
+.state-active-206:active{transform:translateY(2px) scale(0.990)}
+.state-hover-207:hover{border-color:#FF3D00;transform:translateY(-2px)}
+.state-focus-207:focus-visible{outline:2px solid #FF3D00;outline-offset:5px}
+.state-active-207:active{transform:translateY(0px) scale(0.980)}
+.state-hover-208:hover{border-color:#B6FF00;transform:translateY(-3px)}
+.state-focus-208:focus-visible{outline:2px solid #B6FF00;outline-offset:2px}
+.state-active-208:active{transform:translateY(1px) scale(0.985)}
+.state-hover-209:hover{border-color:#10131A;transform:translateY(-4px)}
+.state-focus-209:focus-visible{outline:2px solid #10131A;outline-offset:3px}
+.state-active-209:active{transform:translateY(2px) scale(0.990)}
+.state-hover-210:hover{border-color:#00A7C7;transform:translateY(-0px)}
+.state-focus-210:focus-visible{outline:2px solid #00A7C7;outline-offset:4px}
+.state-active-210:active{transform:translateY(0px) scale(0.980)}
+.state-hover-211:hover{border-color:#E0006C;transform:translateY(-1px)}
+.state-focus-211:focus-visible{outline:2px solid #E0006C;outline-offset:5px}
+.state-active-211:active{transform:translateY(1px) scale(0.985)}
+.state-hover-212:hover{border-color:#3B146E;transform:translateY(-2px)}
+.state-focus-212:focus-visible{outline:2px solid #3B146E;outline-offset:2px}
+.state-active-212:active{transform:translateY(2px) scale(0.990)}
+.state-hover-213:hover{border-color:#FF8A00;transform:translateY(-3px)}
+.state-focus-213:focus-visible{outline:2px solid #FF8A00;outline-offset:3px}
+.state-active-213:active{transform:translateY(0px) scale(0.980)}
+.state-hover-214:hover{border-color:#FF3D00;transform:translateY(-4px)}
+.state-focus-214:focus-visible{outline:2px solid #FF3D00;outline-offset:4px}
+.state-active-214:active{transform:translateY(1px) scale(0.985)}
+.state-hover-215:hover{border-color:#B6FF00;transform:translateY(-0px)}
+.state-focus-215:focus-visible{outline:2px solid #B6FF00;outline-offset:5px}
+.state-active-215:active{transform:translateY(2px) scale(0.990)}
+.state-hover-216:hover{border-color:#10131A;transform:translateY(-1px)}
+.state-focus-216:focus-visible{outline:2px solid #10131A;outline-offset:2px}
+.state-active-216:active{transform:translateY(0px) scale(0.980)}
+.state-hover-217:hover{border-color:#00A7C7;transform:translateY(-2px)}
+.state-focus-217:focus-visible{outline:2px solid #00A7C7;outline-offset:3px}
+.state-active-217:active{transform:translateY(1px) scale(0.985)}
+.state-hover-218:hover{border-color:#E0006C;transform:translateY(-3px)}
+.state-focus-218:focus-visible{outline:2px solid #E0006C;outline-offset:4px}
+.state-active-218:active{transform:translateY(2px) scale(0.990)}
+.state-hover-219:hover{border-color:#3B146E;transform:translateY(-4px)}
+.state-focus-219:focus-visible{outline:2px solid #3B146E;outline-offset:5px}
+.state-active-219:active{transform:translateY(0px) scale(0.980)}
+.state-hover-220:hover{border-color:#FF8A00;transform:translateY(-0px)}
+.state-focus-220:focus-visible{outline:2px solid #FF8A00;outline-offset:2px}
+.state-active-220:active{transform:translateY(1px) scale(0.985)}
+.state-hover-221:hover{border-color:#FF3D00;transform:translateY(-1px)}
+.state-focus-221:focus-visible{outline:2px solid #FF3D00;outline-offset:3px}
+.state-active-221:active{transform:translateY(2px) scale(0.990)}
+.state-hover-222:hover{border-color:#B6FF00;transform:translateY(-2px)}
+.state-focus-222:focus-visible{outline:2px solid #B6FF00;outline-offset:4px}
+.state-active-222:active{transform:translateY(0px) scale(0.980)}
+.state-hover-223:hover{border-color:#10131A;transform:translateY(-3px)}
+.state-focus-223:focus-visible{outline:2px solid #10131A;outline-offset:5px}
+.state-active-223:active{transform:translateY(1px) scale(0.985)}
+.state-hover-224:hover{border-color:#00A7C7;transform:translateY(-4px)}
+.state-focus-224:focus-visible{outline:2px solid #00A7C7;outline-offset:2px}
+.state-active-224:active{transform:translateY(2px) scale(0.990)}
+.state-hover-225:hover{border-color:#E0006C;transform:translateY(-0px)}
+.state-focus-225:focus-visible{outline:2px solid #E0006C;outline-offset:3px}
+.state-active-225:active{transform:translateY(0px) scale(0.980)}
+.state-hover-226:hover{border-color:#3B146E;transform:translateY(-1px)}
+.state-focus-226:focus-visible{outline:2px solid #3B146E;outline-offset:4px}
+.state-active-226:active{transform:translateY(1px) scale(0.985)}
+.state-hover-227:hover{border-color:#FF8A00;transform:translateY(-2px)}
+.state-focus-227:focus-visible{outline:2px solid #FF8A00;outline-offset:5px}
+.state-active-227:active{transform:translateY(2px) scale(0.990)}
+.state-hover-228:hover{border-color:#FF3D00;transform:translateY(-3px)}
+.state-focus-228:focus-visible{outline:2px solid #FF3D00;outline-offset:2px}
+.state-active-228:active{transform:translateY(0px) scale(0.980)}
+.state-hover-229:hover{border-color:#B6FF00;transform:translateY(-4px)}
+.state-focus-229:focus-visible{outline:2px solid #B6FF00;outline-offset:3px}
+.state-active-229:active{transform:translateY(1px) scale(0.985)}
+.state-hover-230:hover{border-color:#10131A;transform:translateY(-0px)}
+.state-focus-230:focus-visible{outline:2px solid #10131A;outline-offset:4px}
+.state-active-230:active{transform:translateY(2px) scale(0.990)}
+.state-hover-231:hover{border-color:#00A7C7;transform:translateY(-1px)}
+.state-focus-231:focus-visible{outline:2px solid #00A7C7;outline-offset:5px}
+.state-active-231:active{transform:translateY(0px) scale(0.980)}
+.state-hover-232:hover{border-color:#E0006C;transform:translateY(-2px)}
+.state-focus-232:focus-visible{outline:2px solid #E0006C;outline-offset:2px}
+.state-active-232:active{transform:translateY(1px) scale(0.985)}
+.state-hover-233:hover{border-color:#3B146E;transform:translateY(-3px)}
+.state-focus-233:focus-visible{outline:2px solid #3B146E;outline-offset:3px}
+.state-active-233:active{transform:translateY(2px) scale(0.990)}
+.state-hover-234:hover{border-color:#FF8A00;transform:translateY(-4px)}
+.state-focus-234:focus-visible{outline:2px solid #FF8A00;outline-offset:4px}
+.state-active-234:active{transform:translateY(0px) scale(0.980)}
+.state-hover-235:hover{border-color:#FF3D00;transform:translateY(-0px)}
+.state-focus-235:focus-visible{outline:2px solid #FF3D00;outline-offset:5px}
+.state-active-235:active{transform:translateY(1px) scale(0.985)}
+.state-hover-236:hover{border-color:#B6FF00;transform:translateY(-1px)}
+.state-focus-236:focus-visible{outline:2px solid #B6FF00;outline-offset:2px}
+.state-active-236:active{transform:translateY(2px) scale(0.990)}
+.state-hover-237:hover{border-color:#10131A;transform:translateY(-2px)}
+.state-focus-237:focus-visible{outline:2px solid #10131A;outline-offset:3px}
+.state-active-237:active{transform:translateY(0px) scale(0.980)}
+.state-hover-238:hover{border-color:#00A7C7;transform:translateY(-3px)}
+.state-focus-238:focus-visible{outline:2px solid #00A7C7;outline-offset:4px}
+.state-active-238:active{transform:translateY(1px) scale(0.985)}
+.state-hover-239:hover{border-color:#E0006C;transform:translateY(-4px)}
+.state-focus-239:focus-visible{outline:2px solid #E0006C;outline-offset:5px}
+.state-active-239:active{transform:translateY(2px) scale(0.990)}
+.state-hover-240:hover{border-color:#3B146E;transform:translateY(-0px)}
+.state-focus-240:focus-visible{outline:2px solid #3B146E;outline-offset:2px}
+.state-active-240:active{transform:translateY(0px) scale(0.980)}
+.state-hover-241:hover{border-color:#FF8A00;transform:translateY(-1px)}
+.state-focus-241:focus-visible{outline:2px solid #FF8A00;outline-offset:3px}
+.state-active-241:active{transform:translateY(1px) scale(0.985)}
+.state-hover-242:hover{border-color:#FF3D00;transform:translateY(-2px)}
+.state-focus-242:focus-visible{outline:2px solid #FF3D00;outline-offset:4px}
+.state-active-242:active{transform:translateY(2px) scale(0.990)}
+.state-hover-243:hover{border-color:#B6FF00;transform:translateY(-3px)}
+.state-focus-243:focus-visible{outline:2px solid #B6FF00;outline-offset:5px}
+.state-active-243:active{transform:translateY(0px) scale(0.980)}
+.state-hover-244:hover{border-color:#10131A;transform:translateY(-4px)}
+.state-focus-244:focus-visible{outline:2px solid #10131A;outline-offset:2px}
+.state-active-244:active{transform:translateY(1px) scale(0.985)}
+.state-hover-245:hover{border-color:#00A7C7;transform:translateY(-0px)}
+.state-focus-245:focus-visible{outline:2px solid #00A7C7;outline-offset:3px}
+.state-active-245:active{transform:translateY(2px) scale(0.990)}
+.state-hover-246:hover{border-color:#E0006C;transform:translateY(-1px)}
+.state-focus-246:focus-visible{outline:2px solid #E0006C;outline-offset:4px}
+.state-active-246:active{transform:translateY(0px) scale(0.980)}
+.state-hover-247:hover{border-color:#3B146E;transform:translateY(-2px)}
+.state-focus-247:focus-visible{outline:2px solid #3B146E;outline-offset:5px}
+.state-active-247:active{transform:translateY(1px) scale(0.985)}
+.state-hover-248:hover{border-color:#FF8A00;transform:translateY(-3px)}
+.state-focus-248:focus-visible{outline:2px solid #FF8A00;outline-offset:2px}
+.state-active-248:active{transform:translateY(2px) scale(0.990)}
+.state-hover-249:hover{border-color:#FF3D00;transform:translateY(-4px)}
+.state-focus-249:focus-visible{outline:2px solid #FF3D00;outline-offset:3px}
+.state-active-249:active{transform:translateY(0px) scale(0.980)}
+.state-hover-250:hover{border-color:#B6FF00;transform:translateY(-0px)}
+.state-focus-250:focus-visible{outline:2px solid #B6FF00;outline-offset:4px}
+.state-active-250:active{transform:translateY(1px) scale(0.985)}

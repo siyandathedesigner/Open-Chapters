@@ -1,0 +1,57 @@
+/* V7.5 — 95% spatial energy, 100% V7.3 pacing.
+   This layer restores V7.2's visual tension without restoring its persistent nav,
+   information density, or continuous motion density. */
+.home-page .hero-visual{transform:scale(1.033)}
+.home-page .benefit-rail{transform:translateY(21px);box-shadow:0 21px 53px rgba(16,19,26,.118)}
+.section-collision{height:70px}
+.collision-star-a{left:7.25%;top:26px;font-size:40px;transform:rotate(-11deg)}
+.collision-star-b{right:8.25%;top:5px;font-size:24px}
+.collision-book{right:15.75%;top:28px;transform:rotate(3.7deg);box-shadow:5px 5px 0 var(--magenta)}
+
+/* Star product gets almost all of the former cabinet drama. */
+.home-page .home-lesson-showcase{padding-top:76px}
+.home-page .home-lesson-stage{padding-top:84px;clip-path:polygon(0 4.3%,7% 2.2%,15% 4.6%,25% 1.8%,36% 4%,48% 1.6%,59% 4.2%,71% 2%,82% 4.3%,91% 2%,100% 3.8%,100% 96.2%,91% 97.8%,80% 96.2%,69% 98.8%,56% 96.6%,43% 98.8%,30% 96.2%,17% 98.3%,7% 96.2%,0 97.8%)}
+.home-page .home-lesson-frame{transform:rotate(-.17deg);box-shadow:0 49px 116px rgba(0,0,0,.57),0 0 0 4px var(--cyan),0 0 0 8px var(--violet),0 0 91px rgba(0,167,199,.195)}
+.home-page .home-lesson-frame:hover{transform:translateY(-5.5px) rotate(.075deg) scale(1.0028)}
+
+/* Restore overlap and asymmetry, not more content. */
+.programmes-section{padding-top:107px;padding-bottom:110px}
+.programmes-section .programme-layout{grid-template-columns:1.155fr .942fr;gap:2px}
+.programmes-section .programme-art{transform:rotate(-1.03deg) translateX(23px);box-shadow:0 29px 68px rgba(16,19,26,.176),-8px 8px 0 var(--cyan)}
+.programmes-section .programme-cards{transform:translateX(-17px);gap:10px}
+.programmes-section .programme-cards article:nth-child(1){transform:translateY(-26px) rotate(.42deg)}
+.programmes-section .programme-cards article:nth-child(2){transform:translateY(13px) rotate(-.33deg)}
+.programmes-section .programme-cards article:nth-child(3){transform:translateY(-7px) rotate(.46deg)}
+.programmes-section .programme-cards article:hover{transform:translateY(-10px) rotate(0) scale(1.023)!important}
+.edge-word{font-size:clamp(4.95rem,11.7vw,11.7rem);-webkit-text-stroke:1.9px rgba(59,20,110,.072)}
+.edge-word-programmes{right:-1.8vw;top:43px;transform:rotate(-2.8deg)}
+
+.parent-section{padding:115px 0}
+.parent-section .parent-copy{padding:56px 7% 56px 1%}
+.parent-section .parent-picture{min-height:470px;transform:rotate(1.18deg) translateX(-11px);box-shadow:0 33px 73px rgba(16,19,26,.176),10px 10px 0 rgba(224,0,108,.78)}
+.edge-mark{font-size:15.5rem;color:rgba(0,167,199,.067)}
+
+.mentor-section{padding:116px 0 124px}
+.mentor-section .mentor-feature{height:498px;transform:rotate(-1.22deg) translateX(19px);box-shadow:0 34px 78px rgba(16,19,26,.196),-10px 10px 0 var(--violet)}
+.mentor-section .mentor-copy{margin-left:-21px;padding:47px 0 47px 58px;border-left:3.8px solid var(--orange)}
+.edge-word-mentor{opacity:.95}
+.closing-section:before{top:-23px;height:48px;clip-path:polygon(0 0,9% 40%,18% 8%,29% 55%,41% 12%,53% 50%,66% 5%,78% 52%,90% 11%,100% 43%,100% 0)}
+
+/* Pacing is intentionally NOT returned to V7.2: quiet beats and implicit thread stay. */
+.quiet-beat{min-height:185px;padding-top:54px;padding-bottom:54px}
+.narrative-thread{margin-top:44px}
+.narrative-pulse{margin-top:66px}
+
+/* Motion remains selective. Spatial energy != everything moving. */
+.programmes-section .programme-art,.parent-section .parent-picture,.mentor-section .mentor-feature{animation:none!important}
+.collision-star{animation-duration:6.4s}
+.edge-word,.edge-mark{animation:none!important}
+
+@media(max-width:900px){
+ .programmes-section .programme-art,.programmes-section .programme-cards,.parent-section .parent-picture,.mentor-section .mentor-feature,.mentor-section .mentor-copy{transform:none;margin:0}
+ .programmes-section .programme-cards article{transform:none!important}
+}
+@media(max-width:820px){
+ .section-collision{height:46px}.collision-book{display:none}.home-page .hero-visual{transform:none}.home-page .home-lesson-stage{clip-path:none}
+}
+@media(prefers-reduced-motion:reduce){.collision-star{animation:none}.home-page .home-lesson-frame{transform:none!important}}

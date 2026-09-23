@@ -1,0 +1,59 @@
+/* V7.7 — restore V7.2 spatial chaos while retaining V7.3 pacing/navigation and V7.6 lesson rebalance. */
+/* This layer intentionally restores composition only. It does not add sections, information density, or global motion. */
+.home-page .hero-visual{transform:scale(1.035);transform-origin:55% 55%}
+.home-page .benefit-rail{transform:translateY(22px);box-shadow:0 22px 55px rgba(16,19,26,.12);z-index:9}
+.section-collision{height:74px}
+.collision-star-a{left:7%;top:27px;font-size:42px;transform:rotate(-12deg)}
+.collision-star-b{right:8%;top:4px;font-size:25px}
+.collision-book{right:16%;top:29px;transform:rotate(4deg);box-shadow:5px 5px 0 var(--magenta)}
+
+/* Restore V7.2 overlap, scale contrast and edge tension outside the lesson. */
+.programmes-section{padding-top:110px;padding-bottom:112px}
+.programmes-section .programme-layout{grid-template-columns:1.16fr .94fr;gap:0;align-items:center}
+.programmes-section .programme-art{min-height:430px;transform:rotate(-1.1deg) translateX(24px);border:4px solid #fff;box-shadow:0 30px 70px rgba(16,19,26,.18),-8px 8px 0 var(--cyan)}
+.programmes-section .programme-cards{transform:translateX(-18px);gap:10px}
+.programmes-section .programme-cards article:nth-child(1){transform:translateY(-28px) rotate(.45deg)}
+.programmes-section .programme-cards article:nth-child(2){transform:translateY(14px) rotate(-.35deg)}
+.programmes-section .programme-cards article:nth-child(3){transform:translateY(-8px) rotate(.5deg)}
+.programmes-section .programme-cards article:hover{transform:translateY(-10px) rotate(0) scale(1.025)!important;z-index:5}
+.edge-word{font-size:clamp(5rem,12vw,12rem);-webkit-text-stroke:2px rgba(59,20,110,.075)}
+.edge-word-programmes{right:-2vw;top:40px;transform:rotate(-3deg)}
+
+.parent-section{padding:118px 0}
+.parent-section .parent-copy{padding:58px 7% 58px 1%}
+.parent-section .parent-picture{min-height:475px;transform:rotate(1.25deg) translateX(-12px);border:5px solid #fff;box-shadow:0 34px 75px rgba(16,19,26,.18),10px 10px 0 rgba(224,0,108,.8)}
+.edge-mark{font-size:16rem;color:rgba(0,167,199,.07)}
+.edge-mark-parent{right:-20px;bottom:-65px;transform:rotate(8deg)}
+
+.mentor-section{padding:118px 0 126px}
+.mentor-section .mentor-grid{grid-template-columns:1.08fr .92fr;gap:0}
+.mentor-section .mentor-feature{height:500px;transform:rotate(-1.3deg) translateX(20px);border:5px solid #fff;box-shadow:0 35px 80px rgba(16,19,26,.2),-10px 10px 0 var(--violet)}
+.mentor-section .mentor-copy{margin-left:-22px;padding:48px 0 48px 60px;border-left:4px solid var(--orange)}
+.edge-word-mentor{opacity:1;left:2vw;bottom:20px;transform:rotate(2deg);-webkit-text-stroke-color:rgba(224,0,108,.07)}
+.closing-section:before{top:-24px;height:50px;clip-path:polygon(0 0,9% 42%,18% 8%,29% 58%,41% 12%,53% 52%,66% 5%,78% 54%,90% 11%,100% 45%,100% 0)}
+.closing-content>div:first-child{transform:rotate(-.7deg)}
+
+/* Keep V7.3's deliberate pacing and implicit horizontal navigation. */
+.narrative-thread{margin-top:44px}
+.narrative-pulse{margin-top:66px}
+.quiet-beat{min-height:185px;padding-top:54px;padding-bottom:54px}
+
+/* Do not turn spatial chaos into motion chaos. */
+.programmes-section .programme-art,.parent-section .parent-picture,.mentor-section .mentor-feature{animation:none!important}
+.edge-word,.edge-mark{animation:none!important}
+.collision-star{animation-duration:5.8s}
+
+@media(max-width:900px){
+ .programmes-section .programme-art,.programmes-section .programme-cards,.parent-section .parent-picture,.mentor-section .mentor-feature,.mentor-section .mentor-copy{transform:none;margin:0}
+ .programmes-section .programme-cards article{transform:none!important}
+ .mentor-section .mentor-grid{grid-template-columns:1fr;gap:28px}
+ .mentor-section .mentor-copy{padding:20px 0;border-left:0;background:none}
+ .edge-word,.edge-mark{display:none}
+}
+@media(max-width:820px){
+ .section-collision{height:48px}.collision-book{display:none}.home-page .benefit-rail{transform:translateY(12px)}.home-page .hero-visual{transform:none}
+ .parent-section,.mentor-section,.programmes-section{padding-block:78px}
+}
+@media(prefers-reduced-motion:reduce){
+ .collision-star{animation:none}.programmes-section .programme-art,.parent-section .parent-picture,.mentor-section .mentor-feature{transform:none!important}
+}
