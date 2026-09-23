@@ -36,13 +36,13 @@ em{
 .hero-copy h1 em{
   display:inline-block;
   padding-bottom:.08em;
-  background-image:linear-gradient(90deg,var(--violet),var(--cyan) 55%,var(--magenta));
-  background-size:180% 100%;
+  background-image:linear-gradient(90deg,var(--violet),var(--cyan) 50%,var(--magenta));
+  background-size:100% 100%;
   -webkit-background-clip:text;
   background-clip:text;
   color:transparent;
   -webkit-text-fill-color:transparent;
-  animation:oc-ink-shift 8s ease-in-out infinite;
+  animation:none;
 }
 .object-icon-star{background:linear-gradient(135deg,var(--violet),var(--cyan));color:#fff}
 
