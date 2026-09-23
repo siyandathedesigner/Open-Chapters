@@ -1,0 +1,149 @@
+/* Gate 2 — G3–G8 hierarchy pass. Product name stays Open Chapter. No cabinet restyle. */
+
+/* G3 — marketing display on white is cabinet ink. One gradient em, home hero H1 only. */
+em{
+  background:none;
+  -webkit-background-clip:border-box;
+  background-clip:border-box;
+  color:inherit;
+  -webkit-text-fill-color:currentColor;
+  animation:none;
+}
+.hero-copy h1,
+.v6-hero h1,
+.v6-hero h1 em,
+.home-lesson-intro h2,
+.home-page .home-lesson-intro h2 em,
+.section-intro h2,
+.section-intro h2 em,
+.section-bar h2,
+.parent-copy h2,
+.parent-copy h2 em,
+.mentor-copy h2,
+.lesson-page-heading h1,
+.v6-process h2,
+.programme-editorial h2,
+.question-grid h2,
+.mentor-method-copy h2,
+.featured-resource h2,
+.v6-image-story h2,
+.start-layout aside h2{
+  color:var(--ink);
+  background-image:none;
+  -webkit-text-fill-color:currentColor;
+  animation:none;
+}
+.hero-copy h1 em{
+  display:inline-block;
+  padding-bottom:.08em;
+  background-image:linear-gradient(90deg,var(--violet),var(--cyan) 55%,var(--magenta));
+  background-size:180% 100%;
+  -webkit-background-clip:text;
+  background-clip:text;
+  color:transparent;
+  -webkit-text-fill-color:transparent;
+  animation:oc-ink-shift 8s ease-in-out infinite;
+}
+.object-icon-star{background:linear-gradient(135deg,var(--violet),var(--cyan));color:#fff}
+
+/* G3 — ink shell: white labels, cyan2 meta, orange only on the score numeral. */
+.lesson-frame .mission span,
+.lesson-frame .mission strong,
+.lesson-frame .lesson-progress>span,
+.lesson-frame .score span,
+.lesson-frame .learner b,
+.lesson-frame .lesson-footer span,
+.lesson-frame .lesson-footer span:nth-child(3){color:#fff}
+.lesson-frame .learner small,
+.lesson-frame .lesson-progress b,
+.lesson-frame .lesson-footer span:first-child,
+.lesson-frame .lesson-nav button span{color:var(--cyan2)}
+.lesson-frame .lesson-nav button.active,
+.lesson-frame .lesson-nav button.active span{color:#051018}
+.lesson-frame .score strong,
+.lesson-frame .score strong.pop{color:var(--orange)}
+.lesson-frame .avatar{border-color:var(--cyan)}
+.lesson-frame .next-button{background:linear-gradient(100deg,var(--magenta),#ff2f93)}
+@keyframes scorePop{
+  0%{transform:scale(1);color:var(--orange)}
+  40%{transform:scale(1.18);color:var(--orange)}
+  100%{transform:scale(1);color:var(--orange)}
+}
+
+/* G4 — quiet the collision chrome that competes with reading and H2s. */
+.home-page .section-collision{height:32px}
+.home-page .collision-star{opacity:.2;text-shadow:none;animation:none}
+.home-page .collision-star-a{color:var(--ink);font-size:16px;top:8px}
+.home-page .collision-star-b{font-size:11px;opacity:.28;top:2px}
+.home-page .collision-book,
+.home-page .collision-book b{
+  opacity:.16;
+  background:transparent;
+  border-color:transparent;
+  box-shadow:none;
+  color:var(--ink);
+  transform:none;
+  letter-spacing:.06em;
+  padding:0;
+}
+.home-page .edge-word{
+  font-size:clamp(2.8rem,6.5vw,6.4rem);
+  opacity:.32;
+  -webkit-text-stroke-color:rgba(16,19,26,.08);
+}
+.home-page .edge-word-programmes{top:auto;bottom:10px;right:0}
+.home-page .edge-word-mentor{opacity:.26;bottom:8px}
+.home-page .narrative-thread{margin-top:22px;margin-bottom:6px}
+.home-page .narrative-thread a{font-size:.62rem;font-weight:700;letter-spacing:.08em;color:#8b93a3}
+.home-page .narrative-thread a:hover,
+.home-page .narrative-thread a.is-current{color:var(--ink)}
+.home-page .narrative-thread a.is-current span{color:var(--cyan)}
+.home-page .home-lesson-aura{opacity:.22;filter:blur(70px);animation:none}
+.mentor-section .mentor-copy{border-left-color:rgba(16,19,26,.16)}
+
+/* G6 — progress is a paper report: proof lead, one hero metric, one quiet CTA. */
+.progress-page,
+.progress-page .v6-hero,
+.progress-page .report-section,
+.progress-page .report-explainer{background:#fff}
+.progress-page .report-card{background:#fff;box-shadow:none;border:1px solid rgba(16,19,26,.12)}
+.progress-page .proof-lead{margin:26px 0 8px;max-width:38rem;color:var(--ink);font-size:clamp(1.28rem,2vw,1.65rem);font-weight:700;line-height:1.35}
+.progress-page .metrics{grid-template-columns:minmax(190px,1.4fr) repeat(3,1fr);align-items:stretch}
+.progress-page .metrics b{color:var(--ink)}
+.progress-page .metrics article:not(.metric-hero) b{font-size:1.45rem;color:#3e4758}
+.progress-page .metric-hero{background:#fff;border:1px solid var(--ink);min-height:168px}
+.progress-page .metric-hero b{font-size:clamp(3rem,4.6vw,4.35rem);letter-spacing:-.045em;line-height:.9;color:var(--ink)}
+.progress-page .metric-hero span{font-size:1.02rem}
+.progress-page .report-explainer b,
+.progress-page .chart polyline{color:var(--ink);stroke:var(--ink)}
+.progress-page .chart circle{stroke:var(--ink)}
+.progress-page .report-cta{margin:22px 0 2px}
+.progress-page .report-cta .btn{box-shadow:none}
+
+/* G7 — a demoted hot button reads as the quiet outline. */
+.btn-hot.is-demoted,
+.btn-hot.is-demoted:hover,
+.btn-hot.is-demoted:focus-visible{
+  color:var(--ink);
+  background:#fff;
+  border-color:#aab6cc;
+  box-shadow:none;
+}
+.btn-hot.is-demoted:after{display:none}
+
+/* G8 — inert Log in is visibly unavailable. Dead resource jumps are labels. */
+.btn:disabled,
+.btn:disabled:hover,
+.btn:disabled:active{cursor:not-allowed;transform:none;box-shadow:none;opacity:.72}
+.btn:disabled:after{display:none}
+.btn-soon{gap:8px}
+.btn-soon small{font-size:.68rem;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:#6a7384}
+.resource-soon{display:inline-block;margin-top:18px;font-weight:800;color:#6a7384}
+
+@media(max-width:820px){
+  .progress-page .metrics{grid-template-columns:1fr 1fr}
+  .progress-page .metric-hero{grid-column:1 / -1}
+}
+@media(prefers-reduced-motion:reduce){
+  .hero-copy h1 em{animation:none}
+}
