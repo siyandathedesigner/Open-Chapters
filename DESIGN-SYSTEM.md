@@ -3,7 +3,7 @@
 ## Product name
 - Name: **Open Chapter** (singular). User-facing chrome, titles, meta, alt text, aria labels and body copy use this singular name.
 - Tagline: **Room to Bloom**. Closing lockup: **OPEN CHAPTER** + **ROOM TO BLOOM.**
-- Logo file stays `assets/open-chapters-logo.png` until the lettering is re-exported (singular art, same path or `assets/open-chapter-logo.png`). The GitHub repo slug remains `Open-Chapters`.
+- Live HTML still loads `assets/open-chapters-logo.png`. That file is the singular wordmark (same bytes as `assets/open-chapter-logo.png`). Canonical masters are `assets/open-chapter-logo.png` and `assets/open-chapter-logo.svg`. The GitHub repo slug remains `Open-Chapters`.
 
 ## Locked colours
 - Gloss White `#FFFFFF`
