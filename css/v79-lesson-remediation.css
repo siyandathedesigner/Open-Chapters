@@ -31,12 +31,12 @@
   max-width:none;
   object-fit:cover;
   object-position:center 42%;
-  transition:opacity 2.4s cubic-bezier(.45,0,.55,1),transform 2.4s cubic-bezier(.45,0,.55,1),filter 2.4s cubic-bezier(.45,0,.55,1);
+  transition:opacity .9s ease-in-out,transform .9s ease-in-out,filter .9s ease-in-out;
 }
 .lesson-frame .story-image .story-layer{opacity:0;z-index:0;filter:none}
 .lesson-frame .story-image .story-layer.is-shown{opacity:1;z-index:1}
 .lesson-frame .story-image .story-layer.is-leaving{
-  opacity:1;
+  opacity:0;
   z-index:1;
   transform:translateX(var(--story-to,-8px)) scale(1.03);
   filter:blur(2px) brightness(.92);

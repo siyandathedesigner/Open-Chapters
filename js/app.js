@@ -107,7 +107,7 @@
         void back.offsetWidth;
         front.style.transition='';
         back.style.transition='';
-      },2500);
+      },960);
     };
     const render=(animate=false,delta=1)=>{
       pageEl.textContent=state.page;
