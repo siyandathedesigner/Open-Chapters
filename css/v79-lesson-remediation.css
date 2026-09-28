@@ -22,7 +22,6 @@
   -webkit-mask-image:linear-gradient(90deg,transparent 0%,rgba(0,0,0,.35) 16%,#000 42%,#000 100%);
   mask-image:linear-gradient(90deg,transparent 0%,rgba(0,0,0,.35) 16%,#000 42%,#000 100%);
 }
-.lesson-frame .story-image picture{position:absolute;inset:0;display:block}
 .lesson-frame .story-image img{
   position:absolute;
   inset:0;
@@ -31,6 +30,14 @@
   max-width:none;
   object-fit:cover;
   object-position:center 42%;
+  transition:opacity .3s ease,transform 6s ease-out;
+}
+.home-page .home-lesson-frame .story-image img{transition:opacity .3s ease,transform 8s ease-out}
+.lesson-frame .story-image .story-incoming{opacity:0;z-index:1}
+.lesson-frame .story-image .story-incoming.is-shown{opacity:1}
+@media(prefers-reduced-motion:reduce){
+  .lesson-frame .story-image img,
+  .home-page .home-lesson-frame .story-image img{transition:none}
 }
 
 .avatar-alien{

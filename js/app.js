@@ -36,9 +36,46 @@
       ['At the bottom of the stairs stood a cabinet full of unfinished stories.','Each one carried a name — except the final book.'],
       ['Maya smiled when she saw the blank cover.','There was room for one more story.']
     ];
-    const render=()=>{pageEl.textContent=state.page;scoreEl.textContent=state.score.toLocaleString();progress.style.width=`${clamp(state.page/8*100,12,100)}%`;const box=$('[data-story-text]',lesson);box.innerHTML=pages[state.page-1].map(t=>`<p>${t}</p>`).join('');};
+    const storyAlts=[
+      'A lantern flickering on a distant desk in a dark library hall, with a pale folded note beside it',
+      'A long aisle of leaning bookshelves, with a warm glow leaking from behind the oldest books',
+      'An open library door under a star, warm light and glowing shelves spilling into the hall',
+      'A book tipping free of its shelf in mid-air, a glint of starlight on the cover',
+      'An open book showing a hand-drawn map with one small point of light',
+      'A bookcase standing ajar, with worn stairs curving down into the light',
+      'A gothic cabinet of glowing books at the foot of a staircase, one volume lit',
+      'A single blank book glowing on a shelf, with an empty space beside it'
+    ];
+    const storySrc=n=>`assets/story/page-${String(n).padStart(2,'0')}.webp`;
+    const preloadStory=n=>{if(n<1||n>8)return;const i=new Image();i.src=storySrc(n);};
+    let storyFade=0;
+    const showStory=(page,animate)=>{
+      const slot=$('.story-image',lesson);
+      const img=slot.querySelector('img:not(.story-incoming)');
+      const src=storySrc(page);
+      const alt=storyAlts[page-1];
+      slot.querySelectorAll('.story-incoming').forEach(n=>n.remove());
+      preloadStory(page-1);
+      preloadStory(page+1);
+      const current=img.getAttribute('src')||'';
+      if(current.endsWith(src)){img.alt=alt;return;}
+      const reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;
+      if(!animate||reduce){img.src=src;img.alt=alt;return;}
+      const incoming=document.createElement('img');
+      incoming.className='story-incoming';
+      incoming.alt='';
+      incoming.setAttribute('aria-hidden','true');
+      incoming.src=src;
+      slot.appendChild(incoming);
+      const token=++storyFade;
+      const finish=()=>{if(token!==storyFade)return;img.src=src;img.alt=alt;incoming.remove();storyFade++;};
+      incoming.addEventListener('transitionend',e=>{if(e.propertyName==='opacity')finish();});
+      requestAnimationFrame(()=>requestAnimationFrame(()=>incoming.classList.add('is-shown')));
+      setTimeout(finish,380);
+    };
+    const render=(animate=false)=>{pageEl.textContent=state.page;scoreEl.textContent=state.score.toLocaleString();progress.style.width=`${clamp(state.page/8*100,12,100)}%`;const box=$('[data-story-text]',lesson);box.innerHTML=pages[state.page-1].map(t=>`<p>${t}</p>`).join('');showStory(state.page,animate);};
     const bumpScore=()=>{scoreEl.classList.remove('pop');void scoreEl.offsetWidth;scoreEl.classList.add('pop')};
-    const turn=(delta)=>{const before=state.page;state.page=clamp(state.page+delta,1,8);if(delta>0&&state.page!==before){state.score+=100;bumpScore()}render()};
+    const turn=(delta)=>{const before=state.page;state.page=clamp(state.page+delta,1,8);if(delta>0&&state.page!==before){state.score+=100;bumpScore()}render(true)};
     $('[data-prev]',lesson)?.addEventListener('click',()=>turn(-1));
     $('[data-next-small]',lesson)?.addEventListener('click',()=>turn(1));
     render();
