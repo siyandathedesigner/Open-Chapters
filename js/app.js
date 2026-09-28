@@ -49,39 +49,6 @@
     const storySrc=n=>`assets/story/page-${String(n).padStart(2,'0')}.webp`;
     const preloadStory=n=>{if(n<1||n>8)return;const i=new Image();i.src=storySrc(n);};
     let storyToken=0;
-    const storyHtml=page=>pages[page-1].map(t=>`<p>${t}</p>`).join('');
-    const showText=(page,animate,delta)=>{
-      const box=$('[data-story-text]',lesson);
-      const html=storyHtml(page);
-      const reduce=!animate||matchMedia('(prefers-reduced-motion: reduce)').matches;
-      if(reduce){box.replaceChildren();box.innerHTML=html;box.style.minHeight='';return;}
-      const token=storyToken;
-      [...box.querySelectorAll('.story-passage')].forEach((p,i,all)=>{if(i<all.length-1)p.remove();});
-      let leaving=box.querySelector('.story-passage');
-      if(!leaving){
-        leaving=document.createElement('div');
-        leaving.className='story-passage';
-        leaving.innerHTML=box.innerHTML;
-        box.innerHTML='';
-        box.appendChild(leaving);
-      }
-      const oldH=Math.max(box.offsetHeight,leaving.offsetHeight);
-      leaving.classList.remove('is-in');
-      leaving.classList.add('is-out');
-      leaving.style.setProperty('--out-x',delta>0?'6px':'-6px');
-      const incoming=document.createElement('div');
-      incoming.className='story-passage is-in';
-      incoming.style.setProperty('--in-x',delta>0?'-6px':'6px');
-      incoming.innerHTML=html;
-      box.appendChild(incoming);
-      box.style.minHeight=Math.max(oldH,incoming.offsetHeight)+'px';
-      setTimeout(()=>{
-        if(token!==storyToken)return;
-        leaving.remove();
-        incoming.classList.remove('is-in');
-        box.style.minHeight='';
-      },960);
-    };
     const showStory=async(page,animate,delta=1)=>{
       const slot=$('.story-image',lesson);
       const layers=[...slot.querySelectorAll('.story-layer')];
@@ -93,50 +60,62 @@
       const back=layers.find(l=>l!==front)||layers[1];
       const same=(front.getAttribute('src')||'').endsWith(src);
       const reduce=!animate||matchMedia('(prefers-reduced-motion: reduce)').matches;
-      if(same&&!front.classList.contains('is-leaving')){front.alt=alt;showText(page,false,delta);return;}
+      if(same&&!front.classList.contains('is-leaving')&&!front.classList.contains('is-entering')){front.alt=alt;return;}
       if(reduce){
         layers.forEach(l=>{l.style.transition='none';l.classList.remove('is-leaving','is-entering','is-shown');});
         front.src=src;front.alt=alt;front.classList.add('is-shown');front.removeAttribute('aria-hidden');
         back.setAttribute('aria-hidden','true');back.alt='';
-        slot.style.backgroundImage='';
         void front.offsetWidth;
         layers.forEach(l=>{l.style.transition='';});
-        showText(page,false,delta);
         return;
       }
       const token=++storyToken;
+      const travel=delta>0?-8:8;
+      slot.style.setProperty('--story-to',travel+'px');
+      slot.style.setProperty('--story-from',(-travel)+'px');
       back.style.transition='none';
       back.classList.remove('is-shown','is-leaving','is-entering');
       back.alt='';
       back.setAttribute('aria-hidden','true');
       if(!(back.getAttribute('src')||'').endsWith(src))back.src=src;
-      slot.style.setProperty('--story-from',delta>0?'10px':'-10px');
       back.classList.add('is-entering');
       void back.offsetWidth;
       back.style.transition='';
       try{await back.decode();}catch(e){}
       if(token!==storyToken)return;
-      slot.style.backgroundImage=`url("${front.currentSrc||front.src}")`;
-      slot.style.backgroundSize='cover';
-      slot.style.backgroundPosition='center 42%';
-      front.classList.remove('is-entering','is-shown');
+      front.style.transition='none';
+      front.classList.remove('is-entering','is-leaving');
+      front.classList.add('is-shown');
+      void front.offsetWidth;
+      front.style.transition='';
+      front.classList.remove('is-shown');
       front.classList.add('is-leaving');
       front.setAttribute('aria-hidden','true');
       void back.offsetWidth;
       back.classList.add('is-shown');
-      showText(page,true,delta);
       setTimeout(()=>{
         if(token!==storyToken)return;
+        front.style.transition='none';
+        back.style.transition='none';
         front.classList.remove('is-leaving','is-shown','is-entering');
         front.alt='';
+        front.setAttribute('aria-hidden','true');
         back.classList.remove('is-entering');
         back.classList.add('is-shown');
         back.alt=alt;
         back.removeAttribute('aria-hidden');
-        slot.style.backgroundImage='';
-      },940);
+        void back.offsetWidth;
+        front.style.transition='';
+        back.style.transition='';
+      },2500);
     };
-    const render=(animate=false,delta=1)=>{pageEl.textContent=state.page;scoreEl.textContent=state.score.toLocaleString();progress.style.width=`${clamp(state.page/8*100,12,100)}%`;showStory(state.page,animate,delta);};
+    const render=(animate=false,delta=1)=>{
+      pageEl.textContent=state.page;
+      scoreEl.textContent=state.score.toLocaleString();
+      progress.style.width=`${clamp(state.page/8*100,12,100)}%`;
+      $('[data-story-text]',lesson).innerHTML=pages[state.page-1].map(t=>`<p>${t}</p>`).join('');
+      showStory(state.page,animate,delta);
+    };
     const bumpScore=()=>{scoreEl.classList.remove('pop');void scoreEl.offsetWidth;scoreEl.classList.add('pop')};
     const turn=(delta)=>{const before=state.page;state.page=clamp(state.page+delta,1,8);if(state.page===before)return;if(delta>0){state.score+=100;bumpScore()}render(true,delta)};
     $('[data-prev]',lesson)?.addEventListener('click',()=>turn(-1));

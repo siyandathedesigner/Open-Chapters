@@ -31,23 +31,30 @@
   max-width:none;
   object-fit:cover;
   object-position:center 42%;
-  transition:opacity .9s ease-in-out,transform .9s ease-in-out;
+  transition:opacity 2.4s cubic-bezier(.45,0,.55,1),transform 2.4s cubic-bezier(.45,0,.55,1),filter 2.4s cubic-bezier(.45,0,.55,1);
 }
-.lesson-frame .story-image .story-layer{opacity:0;z-index:0}
+.lesson-frame .story-image .story-layer{opacity:0;z-index:0;filter:none}
 .lesson-frame .story-image .story-layer.is-shown{opacity:1;z-index:1}
-.lesson-frame .story-image .story-layer.is-leaving{opacity:0;z-index:1}
-.lesson-frame .story-image .story-layer.is-entering{z-index:2;opacity:0;transform:translateX(var(--story-from,10px)) scale(1.04)}
-.lesson-frame .story-image .story-layer.is-entering.is-shown{opacity:1;transform:translateX(0) scale(1)}
-.lesson-frame [data-story-text]{position:relative}
-.lesson-frame .story-passage.is-out{position:absolute;left:0;right:0;top:0;animation:story-copy-out .25s ease-in-out forwards}
-.lesson-frame .story-passage.is-in{animation:story-copy-in .35s ease-in-out both}
-@keyframes story-copy-out{to{opacity:0;transform:translateX(var(--out-x,6px))}}
-@keyframes story-copy-in{from{opacity:0;transform:translateX(var(--in-x,-6px))}to{opacity:1;transform:none}}
+.lesson-frame .story-image .story-layer.is-leaving{
+  opacity:1;
+  z-index:1;
+  transform:translateX(var(--story-to,-8px)) scale(1.03);
+  filter:blur(2px) brightness(.92);
+}
+.lesson-frame .story-image .story-layer.is-entering{
+  z-index:2;
+  opacity:0;
+  transform:translateX(var(--story-from,8px)) scale(1.03);
+  filter:blur(2px);
+}
+.lesson-frame .story-image .story-layer.is-entering.is-shown{
+  opacity:1;
+  transform:translateX(0) scale(1);
+  filter:blur(0);
+}
 @media(prefers-reduced-motion:reduce){
   .lesson-frame .story-image img,
-  .home-page .home-lesson-frame .story-image img,
-  .lesson-frame .story-passage.is-out,
-  .lesson-frame .story-passage.is-in{transition:none;animation:none}
+  .home-page .home-lesson-frame .story-image img{transition:none}
 }
 
 .avatar-alien{
