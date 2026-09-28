@@ -48,34 +48,97 @@
     ];
     const storySrc=n=>`assets/story/page-${String(n).padStart(2,'0')}.webp`;
     const preloadStory=n=>{if(n<1||n>8)return;const i=new Image();i.src=storySrc(n);};
-    let storyFade=0;
-    const showStory=(page,animate)=>{
+    let storyToken=0;
+    const storyHtml=page=>pages[page-1].map(t=>`<p>${t}</p>`).join('');
+    const showText=(page,animate,delta)=>{
+      const box=$('[data-story-text]',lesson);
+      const html=storyHtml(page);
+      const reduce=!animate||matchMedia('(prefers-reduced-motion: reduce)').matches;
+      if(reduce){box.replaceChildren();box.innerHTML=html;box.style.minHeight='';return;}
+      const token=storyToken;
+      [...box.querySelectorAll('.story-passage')].forEach((p,i,all)=>{if(i<all.length-1)p.remove();});
+      let leaving=box.querySelector('.story-passage');
+      if(!leaving){
+        leaving=document.createElement('div');
+        leaving.className='story-passage';
+        leaving.innerHTML=box.innerHTML;
+        box.innerHTML='';
+        box.appendChild(leaving);
+      }
+      const oldH=Math.max(box.offsetHeight,leaving.offsetHeight);
+      leaving.classList.remove('is-in');
+      leaving.classList.add('is-out');
+      leaving.style.setProperty('--out-x',delta>0?'6px':'-6px');
+      const incoming=document.createElement('div');
+      incoming.className='story-passage is-in';
+      incoming.style.setProperty('--in-x',delta>0?'-6px':'6px');
+      incoming.innerHTML=html;
+      box.appendChild(incoming);
+      box.style.minHeight=Math.max(oldH,incoming.offsetHeight)+'px';
+      setTimeout(()=>{
+        if(token!==storyToken)return;
+        leaving.remove();
+        incoming.classList.remove('is-in');
+        box.style.minHeight='';
+      },960);
+    };
+    const showStory=async(page,animate,delta=1)=>{
       const slot=$('.story-image',lesson);
-      const img=slot.querySelector('img:not(.story-incoming)');
+      const layers=[...slot.querySelectorAll('.story-layer')];
       const src=storySrc(page);
       const alt=storyAlts[page-1];
-      slot.querySelectorAll('.story-incoming').forEach(n=>n.remove());
       preloadStory(page-1);
       preloadStory(page+1);
-      const current=img.getAttribute('src')||'';
-      if(current.endsWith(src)){img.alt=alt;return;}
-      const reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;
-      if(!animate||reduce){img.src=src;img.alt=alt;return;}
-      const incoming=document.createElement('img');
-      incoming.className='story-incoming';
-      incoming.alt='';
-      incoming.setAttribute('aria-hidden','true');
-      incoming.src=src;
-      slot.appendChild(incoming);
-      const token=++storyFade;
-      const finish=()=>{if(token!==storyFade)return;img.src=src;img.alt=alt;incoming.remove();storyFade++;};
-      incoming.addEventListener('transitionend',e=>{if(e.propertyName==='opacity')finish();});
-      requestAnimationFrame(()=>requestAnimationFrame(()=>incoming.classList.add('is-shown')));
-      setTimeout(finish,380);
+      const front=layers.find(l=>l.classList.contains('is-shown'))||layers[0];
+      const back=layers.find(l=>l!==front)||layers[1];
+      const same=(front.getAttribute('src')||'').endsWith(src);
+      const reduce=!animate||matchMedia('(prefers-reduced-motion: reduce)').matches;
+      if(same&&!front.classList.contains('is-leaving')){front.alt=alt;showText(page,false,delta);return;}
+      if(reduce){
+        layers.forEach(l=>{l.style.transition='none';l.classList.remove('is-leaving','is-entering','is-shown');});
+        front.src=src;front.alt=alt;front.classList.add('is-shown');front.removeAttribute('aria-hidden');
+        back.setAttribute('aria-hidden','true');back.alt='';
+        slot.style.backgroundImage='';
+        void front.offsetWidth;
+        layers.forEach(l=>{l.style.transition='';});
+        showText(page,false,delta);
+        return;
+      }
+      const token=++storyToken;
+      back.style.transition='none';
+      back.classList.remove('is-shown','is-leaving','is-entering');
+      back.alt='';
+      back.setAttribute('aria-hidden','true');
+      if(!(back.getAttribute('src')||'').endsWith(src))back.src=src;
+      slot.style.setProperty('--story-from',delta>0?'10px':'-10px');
+      back.classList.add('is-entering');
+      void back.offsetWidth;
+      back.style.transition='';
+      try{await back.decode();}catch(e){}
+      if(token!==storyToken)return;
+      slot.style.backgroundImage=`url("${front.currentSrc||front.src}")`;
+      slot.style.backgroundSize='cover';
+      slot.style.backgroundPosition='center 42%';
+      front.classList.remove('is-entering','is-shown');
+      front.classList.add('is-leaving');
+      front.setAttribute('aria-hidden','true');
+      void back.offsetWidth;
+      back.classList.add('is-shown');
+      showText(page,true,delta);
+      setTimeout(()=>{
+        if(token!==storyToken)return;
+        front.classList.remove('is-leaving','is-shown','is-entering');
+        front.alt='';
+        back.classList.remove('is-entering');
+        back.classList.add('is-shown');
+        back.alt=alt;
+        back.removeAttribute('aria-hidden');
+        slot.style.backgroundImage='';
+      },940);
     };
-    const render=(animate=false)=>{pageEl.textContent=state.page;scoreEl.textContent=state.score.toLocaleString();progress.style.width=`${clamp(state.page/8*100,12,100)}%`;const box=$('[data-story-text]',lesson);box.innerHTML=pages[state.page-1].map(t=>`<p>${t}</p>`).join('');showStory(state.page,animate);};
+    const render=(animate=false,delta=1)=>{pageEl.textContent=state.page;scoreEl.textContent=state.score.toLocaleString();progress.style.width=`${clamp(state.page/8*100,12,100)}%`;showStory(state.page,animate,delta);};
     const bumpScore=()=>{scoreEl.classList.remove('pop');void scoreEl.offsetWidth;scoreEl.classList.add('pop')};
-    const turn=(delta)=>{const before=state.page;state.page=clamp(state.page+delta,1,8);if(delta>0&&state.page!==before){state.score+=100;bumpScore()}render(true)};
+    const turn=(delta)=>{const before=state.page;state.page=clamp(state.page+delta,1,8);if(state.page===before)return;if(delta>0){state.score+=100;bumpScore()}render(true,delta)};
     $('[data-prev]',lesson)?.addEventListener('click',()=>turn(-1));
     $('[data-next-small]',lesson)?.addEventListener('click',()=>turn(1));
     render();

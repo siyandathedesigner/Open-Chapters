@@ -22,7 +22,8 @@
   -webkit-mask-image:linear-gradient(90deg,transparent 0%,rgba(0,0,0,.35) 16%,#000 42%,#000 100%);
   mask-image:linear-gradient(90deg,transparent 0%,rgba(0,0,0,.35) 16%,#000 42%,#000 100%);
 }
-.lesson-frame .story-image img{
+.lesson-frame .story-image img,
+.home-page .home-lesson-frame .story-image img{
   position:absolute;
   inset:0;
   width:100%;
@@ -30,14 +31,23 @@
   max-width:none;
   object-fit:cover;
   object-position:center 42%;
-  transition:opacity .3s ease,transform 6s ease-out;
+  transition:opacity .9s ease-in-out,transform .9s ease-in-out;
 }
-.home-page .home-lesson-frame .story-image img{transition:opacity .3s ease,transform 8s ease-out}
-.lesson-frame .story-image .story-incoming{opacity:0;z-index:1}
-.lesson-frame .story-image .story-incoming.is-shown{opacity:1}
+.lesson-frame .story-image .story-layer{opacity:0;z-index:0}
+.lesson-frame .story-image .story-layer.is-shown{opacity:1;z-index:1}
+.lesson-frame .story-image .story-layer.is-leaving{opacity:0;z-index:1}
+.lesson-frame .story-image .story-layer.is-entering{z-index:2;opacity:0;transform:translateX(var(--story-from,10px)) scale(1.04)}
+.lesson-frame .story-image .story-layer.is-entering.is-shown{opacity:1;transform:translateX(0) scale(1)}
+.lesson-frame [data-story-text]{position:relative}
+.lesson-frame .story-passage.is-out{position:absolute;left:0;right:0;top:0;animation:story-copy-out .25s ease-in-out forwards}
+.lesson-frame .story-passage.is-in{animation:story-copy-in .35s ease-in-out both}
+@keyframes story-copy-out{to{opacity:0;transform:translateX(var(--out-x,6px))}}
+@keyframes story-copy-in{from{opacity:0;transform:translateX(var(--in-x,-6px))}to{opacity:1;transform:none}}
 @media(prefers-reduced-motion:reduce){
   .lesson-frame .story-image img,
-  .home-page .home-lesson-frame .story-image img{transition:none}
+  .home-page .home-lesson-frame .story-image img,
+  .lesson-frame .story-passage.is-out,
+  .lesson-frame .story-passage.is-in{transition:none;animation:none}
 }
 
 .avatar-alien{
