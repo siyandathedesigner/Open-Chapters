@@ -49,6 +49,21 @@
     const storySrc=n=>`assets/story/page-${String(n).padStart(2,'0')}.webp`;
     const preloadStory=n=>{if(n<1||n>8)return;const i=new Image();i.src=storySrc(n);};
     let storyToken=0;
+    const settleStory=(token,front,back,alt)=>{
+      if(token!==storyToken)return;
+      front.style.transition='none';
+      back.style.transition='none';
+      front.classList.remove('is-leaving','is-shown','is-entering');
+      front.alt='';
+      front.setAttribute('aria-hidden','true');
+      back.classList.remove('is-entering');
+      back.classList.add('is-shown');
+      back.alt=alt;
+      back.removeAttribute('aria-hidden');
+      void back.offsetWidth;
+      front.style.transition='';
+      back.style.transition='';
+    };
     const showStory=async(page,animate,delta=1)=>{
       const slot=$('.story-image',lesson);
       const layers=[...slot.querySelectorAll('.story-layer')];
@@ -93,21 +108,16 @@
       front.setAttribute('aria-hidden','true');
       void back.offsetWidth;
       back.classList.add('is-shown');
-      setTimeout(()=>{
-        if(token!==storyToken)return;
-        front.style.transition='none';
-        back.style.transition='none';
-        front.classList.remove('is-leaving','is-shown','is-entering');
-        front.alt='';
-        front.setAttribute('aria-hidden','true');
-        back.classList.remove('is-entering');
-        back.classList.add('is-shown');
-        back.alt=alt;
-        back.removeAttribute('aria-hidden');
-        void back.offsetWidth;
-        front.style.transition='';
-        back.style.transition='';
-      },960);
+      let settled=false;
+      const done=e=>{
+        if(e&&e.propertyName&&e.propertyName!=='opacity')return;
+        if(settled||token!==storyToken)return;
+        settled=true;
+        back.removeEventListener('transitionend',done);
+        settleStory(token,front,back,alt);
+      };
+      back.addEventListener('transitionend',done);
+      setTimeout(done,2500);
     };
     const render=(animate=false,delta=1)=>{
       pageEl.textContent=state.page;
