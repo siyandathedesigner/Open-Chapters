@@ -2,7 +2,7 @@
   'use strict';
   const $=(s,c=document)=>c.querySelector(s), $$=(s,c=document)=>[...c.querySelectorAll(s)];
   const clamp=(n,min,max)=>Math.max(min,Math.min(max,n));
-  const state={page:3,score:2450,stage:'Read'};
+  const state={page:3,score:2450};
 
   const header=$('[data-header]');
   const updateHeader=()=>header?.classList.toggle('scrolled',window.scrollY>12);
@@ -25,7 +25,7 @@
 
   const lesson=$('[data-lesson]');
   if(lesson){
-    const pageEl=$('[data-page]',lesson),scoreEl=$('[data-score]',lesson),progress=$('[data-progress-bar]',lesson),mentorCopy=$('[data-mentor-copy]',lesson);
+    const pageEl=$('[data-page]',lesson),scoreEl=$('[data-score]',lesson),progress=$('[data-progress-bar]',lesson);
     const pages=[
       ['The lantern on the desk flickered as Maya stepped closer.','A folded note waited beneath a silver key.'],
       ['The shelves seemed to lean toward her, listening.','She could hear a quiet ticking behind the oldest books.'],
@@ -36,13 +36,11 @@
       ['At the bottom of the stairs stood a cabinet full of unfinished stories.','Each one carried a name — except the final book.'],
       ['Maya smiled when she saw the blank cover.','There was room for one more story.']
     ];
-    const mentor={Read:'Follow the clues in the story.',Think:'What changed when Maya entered?',Create:'Imagine what the next page might reveal.',Mentor:'I’m here when you want a hint.',Rewards:'Your reading streak is growing!'};
     const render=()=>{pageEl.textContent=state.page;scoreEl.textContent=state.score.toLocaleString();progress.style.width=`${clamp(state.page/8*100,12,100)}%`;const box=$('[data-story-text]',lesson);box.innerHTML=pages[state.page-1].map(t=>`<p>${t}</p>`).join('');};
     const bumpScore=()=>{scoreEl.classList.remove('pop');void scoreEl.offsetWidth;scoreEl.classList.add('pop')};
-    $('[data-prev]',lesson)?.addEventListener('click',()=>{state.page=clamp(state.page-1,1,8);render()});
-    $('[data-next-small]',lesson)?.addEventListener('click',()=>{state.page=clamp(state.page+1,1,8);render()});
-    $('[data-next]',lesson)?.addEventListener('click',()=>{const before=state.page;state.page=clamp(state.page+1,1,8);if(state.page!==before){state.score+=100;bumpScore()}render()});
-    $$('[data-stage]',lesson).forEach(btn=>btn.addEventListener('click',()=>{$$('[data-stage]',lesson).forEach(b=>b.classList.remove('active'));btn.classList.add('active');state.stage=btn.dataset.stage;mentorCopy.textContent=mentor[state.stage]}));
+    const turn=(delta)=>{const before=state.page;state.page=clamp(state.page+delta,1,8);if(delta>0&&state.page!==before){state.score+=100;bumpScore()}render()};
+    $('[data-prev]',lesson)?.addEventListener('click',()=>turn(-1));
+    $('[data-next-small]',lesson)?.addEventListener('click',()=>turn(1));
     render();
   }
 
