@@ -117,7 +117,7 @@
         settleStory(token,front,back,alt);
       };
       back.addEventListener('transitionend',done);
-      setTimeout(done,2500);
+      setTimeout(done,1500);
     };
     const render=(animate=false,delta=1)=>{
       pageEl.textContent=state.page;

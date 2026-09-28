@@ -18,7 +18,7 @@
 }
 .lesson-frame .story-image{
   z-index:0;
-  background:transparent;
+  background:#0b0710;
   -webkit-mask-image:linear-gradient(90deg,transparent 0%,rgba(0,0,0,.35) 16%,#000 42%,#000 100%);
   mask-image:linear-gradient(90deg,transparent 0%,rgba(0,0,0,.35) 16%,#000 42%,#000 100%);
 }
@@ -31,7 +31,7 @@
   max-width:none;
   object-fit:cover;
   object-position:center 42%;
-  transition:opacity 2.4s ease-in-out,transform 2.4s ease-in-out,filter 2.4s ease-in-out;
+  transition:opacity 1.4s ease-in-out,transform 1.4s ease-in-out,filter 1.4s ease-in-out;
 }
 .lesson-frame .story-image .story-layer{opacity:0;z-index:0;filter:none}
 .lesson-frame .story-image .story-layer.is-shown{opacity:1;z-index:1}
@@ -39,7 +39,7 @@
   opacity:0;
   z-index:1;
   transform:translateX(var(--story-to,-8px)) scale(1.03);
-  filter:blur(2px) brightness(.92);
+  filter:blur(2px);
 }
 .lesson-frame .story-image .story-layer.is-entering{
   z-index:2;
