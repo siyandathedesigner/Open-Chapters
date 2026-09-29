@@ -1,0 +1,1 @@
+parent-look-4x3.webp / parent-look-3x4.webp: AI-generated illustrative photo (not a real family). Generated 29 Sep 2026 with [TOOL TBC] under a licence permitting commercial use [CONFIRM]. It is original and not derived from any stock image. The prompt is stored in CODING-PROMPTS-v2.3 Prompt B.
