@@ -2,23 +2,22 @@
 /* v24 r3 — professional grid pass. PR6 grammar kept: 3px ink borders, solid offset pigment shadows, stickers, arcade keys, outlined edge words.
    ONE container (1240px), ONE 12-col grid (24px gutter), no tilts on content cards, one accent per section. */
 :root{--plum:#5426d9;--berry:#e0006c;--amber:#ff8a00;--g:24px;--wrap:1240px;--rhythm:112px;--h1:60px;--h2:46px;--h3:22px}
-body[class*="-mock"] .shell{width:min(calc(100% - 48px),var(--shell));margin-inline:auto;padding-left:0;padding-right:0}
+body[class*="-mock"] .shell{width:min(calc(100% - 48px),var(--wrap));margin-inline:auto;padding-left:0;padding-right:0}
 .grid12{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));column-gap:var(--g);row-gap:var(--g)}
 .c1-6{grid-column:1/span 6}.c7-12{grid-column:7/span 6}.c1-7{grid-column:1/span 7}.c8-12{grid-column:8/span 5}.c1-8{grid-column:1/span 8}.c3-10{grid-column:3/span 8}.c1-12{grid-column:1/-1}.c1-5{grid-column:1/span 5}.c6-12{grid-column:6/span 7}
 /* header + logo fix */
 .header-inner{grid-template-columns:200px 1fr auto!important}
 .brand img{width:190px!important;height:auto!important;object-fit:contain;display:block}
 /* type scale */
-.v6-hero h1{font-family:var(--display)!important;font-size:clamp(3.8rem,5.8vw,6.4rem)!important;line-height:.84!important;letter-spacing:-.065em!important;margin:0 0 10px!important}
-.v6-hero h1 em{font-style:normal;color:transparent;background:linear-gradient(90deg,var(--violet2),var(--cyan),var(--magenta));-webkit-background-clip:text;background-clip:text;display:inline;padding-bottom:.08em}
-.v24-sec h2{font-family:var(--display)!important;font-size:clamp(2rem,3.4vw,4rem)!important;line-height:.98!important;letter-spacing:-.045em!important;margin:10px 0 0!important;color:inherit;max-width:none;font-weight:400}
-.content-section.programmes-section h2{font:400 var(--h2)/1.04 var(--display)!important;letter-spacing:-.025em;margin:0!important;color:inherit;max-width:none}
-.v24-sec h3,.v24-card h3{font-family:var(--display);font-size:1.45rem;font-weight:400;line-height:1;margin:12px 0 0}
+.v6-hero h1{font-size:var(--h1)!important;line-height:.98!important;letter-spacing:-.035em!important;margin:0 0 24px!important}
+.v6-hero h1 em{font-style:normal;color:transparent;background:linear-gradient(95deg,var(--cyan),var(--plum) 42%,var(--berry) 75%,var(--amber));-webkit-background-clip:text;background-clip:text;display:inline}
+.v24-sec h2,.content-section.programmes-section h2{font:400 var(--h2)/1.04 var(--display)!important;letter-spacing:-.025em;margin:0!important;color:inherit;max-width:none}
+.v24-sec h3,.v24-card h3{font:400 var(--h3)/1.15 var(--display);margin:0}
 .v24-head{margin-bottom:48px}.v24-head .eyebrow{margin:0 0 14px}.v24-head .v6-lede{margin:16px 0 0;max-width:none}
-.v6-lede{font-family:var(--ui)!important;font-size:1.18rem!important;font-weight:400!important;line-height:1.48!important;color:#33405b!important}
+.v6-lede{font-size:20px!important;line-height:1.5!important}
 .v24-em{font-style:normal;color:var(--violet2)}
 /* hero */
-.v6-hero{padding:44px 0 18px!important;background:#fff}.v6-hero>.shell{padding:0!important}
+.v6-hero{padding:0!important}.v6-hero>.shell{padding:88px 0 72px!important}
 .v24-hero{align-items:center}
 .v24-hero .actions{display:flex;gap:16px;flex-wrap:wrap;margin-top:32px}
 .v24-art{position:relative;border:3px solid var(--ink);border-radius:24px;overflow:hidden;background:#fff;box-shadow:10px 10px 0 var(--magenta),0 26px 60px rgba(16,19,26,.14)}
@@ -94,11 +93,10 @@ body.annotated .ann{display:block}
 body.show-grid:after{content:"";position:fixed;inset:0;pointer-events:none;z-index:999;background:repeating-linear-gradient(90deg,transparent 0,transparent calc((min(100vw - 48px,1240px) - 11*24px)/12),rgba(255,0,0,.06) 0,rgba(255,0,0,.06) calc((min(100vw - 48px,1240px) - 11*24px)/12 + 24px));background-position:calc((100vw - min(100vw - 48px,1240px))/2) 0;background-size:calc((min(100vw - 48px,1240px) + 24px)/12) 100%}
 @media(max-width:700px){
  :root{--g:16px;--rhythm:72px;--h1:36px;--h2:30px;--h3:20px}
- body[class*="-mock"] .shell{width:min(calc(100% - 30px),var(--shell))}
- .v6-hero h1{font-size:clamp(3.5rem,6.2vw,5rem)!important}
+ body[class*="-mock"] .shell{width:calc(100% - 40px)}
  .header-inner{grid-template-columns:150px 1fr auto!important}.brand img{width:140px!important}
  .grid12>*{grid-column:1/-1!important}
- .v6-hero>.shell{padding:0!important}.v6-hero{padding:28px 0 18px!important}.v24-hero .actions{flex-direction:column}.v24-hero .actions .btn{width:100%;justify-content:center}
+ .v6-hero>.shell{padding:48px 0 56px!important}.v24-hero .actions{flex-direction:column}.v24-hero .actions .btn{width:100%;justify-content:center}
  .v24-rail{grid-template-columns:1fr}.v24-rail article{border-right:0;border-bottom:2px dashed var(--line)}.v24-rail article:last-child{border-bottom:0}
  .v24-bands.grid12>*{grid-column:span 12!important}
  .v24-edge{font-size:84px;top:14px}.v24-lines{font-size:19px}.v24-moments{font-size:20px}
@@ -289,64 +287,4 @@ body.tutors-mock .mentor-copy h2{font-size:38px!important;line-height:1.05!impor
 }
 @media(max-width:700px){
   .home-page #programmes.programmes-section > .shell{width:calc(100% - 40px)}
-}
-
-/* Marketing pages share the approved homepage scale, surfaces, and controls. Scoped so index.html is unchanged. */
-body[class*="-mock"]{--g:34px}
-body[class*="-mock"] .v24-sec{padding:110px 0;background:#fff}
-body[class*="-mock"] .v24-sec.paper{background:var(--paper)}
-body[class*="-mock"] .v24-card,
-body[class*="-mock"] .v24-panel,
-body[class*="-mock"] .v26-calc,
-body[class*="-mock"] .v24-faq details,
-body[class*="-mock"] .v24-band,
-body[class*="-mock"] .v24-rail{
-  border:1px solid var(--line)!important;
-  border-radius:12px!important;
-  box-shadow:var(--shadow-small)!important;
-  background:#fff;
-}
-body[class*="-mock"] .v24-card{padding:24px 20px 20px}
-body[class*="-mock"] .v24-card p,
-body[class*="-mock"] .v24-rail p,
-body[class*="-mock"] .v24-band .body p,
-body[class*="-mock"] .v24-faq p{color:var(--muted);font-family:var(--ui);font-size:.93rem;line-height:1.5}
-body[class*="-mock"] .v24-band:hover,
-body[class*="-mock"] .v24-band:focus-visible{transform:translateY(-2px)!important;box-shadow:var(--shadow)!important}
-body[class*="-mock"] .v24-band .top{background:#fff!important;box-shadow:inset 0 6px 0 var(--c);border-bottom:1px solid var(--line)!important;padding:24px 20px 12px!important}
-body[class*="-mock"] .v24-band .top b{font-size:clamp(2rem,3.4vw,4rem)!important;text-shadow:none!important;color:var(--ink)!important}
-body[class*="-mock"] .v24-band .top small{color:var(--violet)!important;background:transparent!important;border:0!important;padding:0!important;letter-spacing:.13em}
-body[class*="-mock"] .v24-band .go{background:#fff!important;color:var(--ink)!important;border-top:1px solid var(--line)!important;font-weight:800}
-body[class*="-mock"] .v24-art{border:1px solid var(--line);border-radius:12px;box-shadow:var(--shadow)}
-body[class*="-mock"] .v24-arcade,
-body[class*="-mock"] .v24-arcade.light{
-  background:linear-gradient(105deg,var(--magenta),#ff0c87 58%,var(--verm))!important;
-  color:#fff!important;
-  border:1.5px solid var(--magenta)!important;
-  border-radius:10px!important;
-  box-shadow:0 8px 22px rgba(224,0,108,.24)!important;
-  font-family:var(--ui)!important;
-  font-weight:800!important;
-  min-height:50px;
-}
-body[class*="-mock"] .v24-close{
-  background:#10131a url("../assets/closing-art.png") center/cover no-repeat;
-  padding:110px 0;
-}
-body[class*="-mock"] .v24-close:before{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(59,20,110,.75),rgba(7,16,30,.42),rgba(7,16,30,.78))}
-body[class*="-mock"] .v24-close .shell{position:relative;z-index:1}
-body[class*="-mock"] .v24-close h2{font-family:var(--display)!important;font-size:clamp(2rem,3.4vw,4rem)!important;line-height:.98!important;letter-spacing:-.045em!important;color:#fff}
-body[class*="-mock"] .v24-close .rtb{font-family:var(--display);font-size:clamp(1.7rem,2.8vw,3.1rem);color:#fff;letter-spacing:-.02em}
-body[class*="-mock"] .v24-close .reg{font-family:var(--ui);font-weight:800;letter-spacing:.13em;color:#fff}
-body[class*="-mock"] .v24-panel.note{font-family:var(--ui);font-style:italic;font-size:1.1rem;line-height:1.5;color:var(--ink)}
-body[class*="-mock"] .v24-faq summary{font-family:var(--display);font-size:1.45rem;font-weight:400;line-height:1.1}
-body[class*="-mock"] .site-footer-v6{background:#fff;border-top:1px solid var(--line)}
-body[class*="-mock"] .site-footer-v6 .shell{width:min(calc(100% - 48px),var(--shell))}
-body[class*="-mock"] .footer-v6-grid a,
-body[class*="-mock"] .footer-v6-grid span{font-family:var(--ui);font-weight:700}
-@media(max-width:820px){
-  body[class*="-mock"]{--g:16px}
-  body[class*="-mock"] .v24-sec,
-  body[class*="-mock"] .v24-close{padding:78px 0}
-  body[class*="-mock"] .site-footer-v6 .shell{width:min(calc(100% - 30px),var(--shell))}
 }
