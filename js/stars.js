@@ -3,7 +3,7 @@
 (function(){let seed=7;const R=()=>(seed=(seed*16807)%2147483647)/2147483647;
 const COLS=['var(--cyan)','var(--magenta)','var(--lime)','var(--orange)','#ffe659','var(--violet2)','var(--cyan2)'];
 const narrow=innerWidth<700,MIN=narrow?90:170,placed=[];
-document.querySelectorAll('main > section.hero, main > section.v24-close, main > section#grades, main > section#start, main > section#tutors, body.home-mock main > section, body.home-page main > section#programmes').forEach(sec=>{
+document.querySelectorAll('body:not(.home-page) > main > section.hero, main > section.v24-close, main > section#grades, main > section#start, main > section#tutors, body.home-mock main > section, body.home-page main > section#programmes').forEach(sec=>{
  const r=sec.getBoundingClientRect(),H=r.height,W=r.width,T=r.top+scrollY;const sh=sec.querySelector('.shell');const L=sh?sh.getBoundingClientRect().left-r.left:24;
  const pr=document.body.classList.contains('pricing-mock');if(pr&&sec.id==='start')return;const id=sec.id,hero=sec.classList.contains('hero'),close=sec.classList.contains('v24-close');const n=narrow?(hero?2:1):pr?2:hero?6:close?4:id==='grades'?3:id==='start'||id==='tutors'?2:5;
  for(let k=0;k<n;k++){const size=narrow?10+R()*12:14+R()*34;const pad=narrow?40:96;let x,y,ok=false;
