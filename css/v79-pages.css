@@ -1,7 +1,6 @@
 /* Draft for CD review. Shared rules for the v2.3 pages. Tokens only. */
 .v79-grad,
-.v6-hero h1 em,
-.v79 h2 em{
+.v6-hero h1 em{
   font-style:normal;
   color:transparent;
   background:linear-gradient(95deg,var(--cyan),var(--violet2) 42%,var(--magenta) 75%,var(--orange));
@@ -12,15 +11,26 @@
   .v79-grad,.v6-hero h1 em,.v79 h2 em{color:var(--magenta);background:none}
 }
 .btn-hot{font-size:1.1875rem;font-weight:800}
-.v79-tbc{
-  display:inline;
-  border:1.5px dashed var(--orange);
-  background:var(--paper);
-  color:var(--ink);
-  font-size:.85em;
-  border-radius:6px;
-  padding:0 .35em;
+/* Header logo was clipping under the fixed 78px bar once the hot button grew. Keep the mark fully inside the bar. */
+.site-header{overflow:visible}
+.header-inner{height:auto;min-height:78px;padding-block:6px}
+.site-header .brand img{width:105px;height:auto;max-height:62px;object-fit:contain}
+.header-actions .btn-hot{font-size:.95rem;line-height:1.1}
+.v79-tbc{display:none}
+body.v79-review .v79-tbc{display:inline;border:1.5px dashed var(--orange);background:var(--paper);color:var(--ink);font-size:.85em;border-radius:6px;padding:0 .35em}
+.v79 [data-placeholder],.v79 #tutors{display:none}
+body.v79-review [data-placeholder],body.v79-review #tutors{display:block}
+body.v79-review .v79-plans{display:grid}
+.home-page #programmes .reveal,
+.home-page #programmes .v79-show,
+.home-page #parents .parent-picture{
+  opacity:1!important;transform:none!important;animation:none!important
 }
+.home-page .parent-picture picture,.home-page .parent-picture img{
+  display:block;width:100%;height:100%;min-height:455px;object-fit:cover;object-position:50% 35%
+}
+.home-page .programmes-section .programme-cards,
+.home-page .programmes-section .programme-cards article{transform:none!important;opacity:1}
 .primary-nav a[aria-current="page"]{color:var(--magenta);text-decoration:underline;text-underline-offset:6px;text-decoration-thickness:2px}
 @media(max-width:1280px){
   .primary-nav{gap:clamp(8px,1vw,16px);font-size:.8rem}
@@ -59,7 +69,22 @@
 .v79-footer-signoff p span:nth-child(3){color:var(--violet2)}
 .v79-footer-signoff small{display:block;margin-top:10px;color:var(--muted)}
 
-.v79 .v6-hero{padding:48px 0 28px}
+.v79 .v6-hero{padding:36px 0 20px}
+.v79 .v6-hero h1{font-size:clamp(2.3rem,3.6vw,3.35rem);line-height:1.08;letter-spacing:-.03em;max-width:18ch}
+.v79 h2{font-size:clamp(1.55rem,2.2vw,2.05rem);line-height:1.15}
+.v79 .v79-quiet h2{font-family:var(--ui);font-weight:800;font-size:1.35rem;letter-spacing:0}
+.v79 .v79-band{padding:40px 0}
+.v79 p{font-size:1.05rem;line-height:1.5;color:var(--ink)}
+.v79-hero-visual{position:relative;border-radius:18px;overflow:hidden;border:4px solid #fff;box-shadow:0 28px 70px rgba(16,19,26,.22),8px 8px 0 var(--cyan),-8px -8px 0 var(--magenta);background:var(--ink);min-height:280px}
+.pricing-page .v79-price-visual{margin:22px auto 0;max-width:520px}
+.v79-hero-visual img{width:100%;height:100%;object-fit:cover;min-height:320px;display:block}
+.v79-hero-visual figcaption{position:absolute;left:12px;bottom:12px;background:var(--ink);color:var(--white);font-family:var(--display);font-size:.85rem;padding:8px 12px;border-radius:10px;border:2px solid var(--cyan)}
+.v79-cards-4 article,.v79-trust li,.v79-beats li,.v79-plans article,.v79-feature{
+  border:0;border-radius:16px;box-shadow:0 16px 36px rgba(16,19,26,.12),5px 5px 0 var(--cyan)
+}
+.v79-trust li:nth-child(2),.v79-cards-4 li:nth-child(2) article{box-shadow:0 16px 36px rgba(16,19,26,.12),5px 5px 0 var(--violet2)}
+.v79-trust li:nth-child(3),.v79-cards-4 li:nth-child(3) article{box-shadow:0 16px 36px rgba(16,19,26,.12),5px 5px 0 var(--magenta)}
+.v79-trust li:nth-child(4),.v79-cards-4 li:nth-child(4) article{box-shadow:0 16px 36px rgba(16,19,26,.12),5px 5px 0 var(--orange)}
 .v79-hero .v6-lede{max-width:40rem}
 .v79-chips{display:flex;flex-wrap:wrap;gap:8px;list-style:none;padding:0;margin:18px 0 0}
 .v79-chips li{border:1px solid var(--line);border-radius:999px;padding:6px 12px;font-weight:700;background:var(--white)}
